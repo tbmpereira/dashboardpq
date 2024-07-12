@@ -1,0 +1,2313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<questionnaire id="292284">
+  <title>Ciência, sociedade, divulgação científica: a visão dos cientistas</title>
+  <investigator/>
+  <dataCollector/>
+  <section id="1230">
+    <sectionInfo>
+      <position>title</position>
+      <text>Consentimento Livre e Esclarecido</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <sectionInfo>
+      <position>before</position>
+      <text>&lt;p style="text-align:left;"&gt;Declaro que fui informado(a) dos objetivos da pesquisa “Ciência, sociedade, divulgação científica: a visão dos cientistas”, de maneira clara e detalhada. Sei que a qualquer momento poderei solicitar novas informações e modificar minha decisão de participar se assim o desejar.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align:left;"&gt;Em caso de dúvidas poderei entrar em contato com o pesquisador Yurij Castelfranchi (orientador) pelo telefone (31) 3409-5031 e pelo e-mail yurijcastelfranchi@gmail.com; com o pesquisador Marcelo Pereira (orientando) pelo telefone (31) 9423-6252 e pelo e-mail mapereira@ufmg.br; e no Departamento de Sociologia da UFMG, onde está sediada a pesquisa, no endereço: Av. Antônio Carlos, 6627 - FAFICH/DSO, Campus Pampulha. Belo Horizonte, MG – Brasil. CEP: 31270-901.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align:left;"&gt;Em caso de dúvidas a respeito dos aspectos éticos da pesquisa, poderei contatar o Comitê de Ética em Pesquisa da UFMG, situado na Av. Antônio Carlos, 6627 / Unidade Administrativa II - 2º andar - Sala 2005. Campus Pampulha. Belo Horizonte, MG – Brasil. CEP: 31270-901. E-mail: coep@prpq.ufmg.br. Telefone: (31) 3409-4592.&lt;/p&gt;&#13;
+&#13;
+&lt;p style="text-align:left;"&gt;Declaro que concordo em participar. Salvei uma via deste termo de consentimento livre e esclarecido e me foi dada à oportunidade de ler e esclarecer as minhas dúvidas.&lt;/p&gt;</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>&lt;p&gt;Após leitura e compreensão do Termo de Consentimento Livre e Esclarecido (TCLE), entendo que minha participação é voluntário e que posso retirá-la a qualquer momento da pesquisa, sem prejuízo algum.&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;É importante que você salve uma cópia deste Termo de Esclarecimento Livre e Esclarecido, que pode ser baixada aqui.&lt;/p&gt;</text>
+      <response varName="consentimento">
+        <fixed>
+          <category>
+            <label>Declaro que li os termos de meu consentimento e concordo em participar desta pesquisa</label>
+            <value>A1</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="698">
+    <sectionInfo>
+      <position>title</position>
+      <text>Temas de interesse e hábitos culturais</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Informe o interesse que você tem por cada um destes assuntos:</text>
+      <subQuestion varName="TI01_SQ001">
+        <text>política</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ002">
+        <text>medicina e saúde</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ004">
+        <text>meio ambiente</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ003">
+        <text>arte e cultura</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ005">
+        <text>ciência e tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ006">
+        <text>esportes</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ007">
+        <text>economia</text>
+      </subQuestion>
+      <subQuestion varName="TI01_SQ008">
+        <text>religião</text>
+      </subQuestion>
+      <response varName="TI01">
+        <fixed>
+          <category>
+            <label>Muito Interessado</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Interessado</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Pouco Interessado</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada Interessado</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não Sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Nos últimos 12 meses você foi a ou participou de algum/a...</text>
+      <subQuestion varName="TI02_SQ001">
+        <text>biblioteca</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ002">
+        <text>jardim zoológico</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ003">
+        <text>museu de ciência</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ004">
+        <text>feira de ciências</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ005">
+        <text>olimpíada científica</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ006">
+        <text>museu de arte</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ007">
+        <text>atividade da semana nacional de ciência e tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ008">
+        <text>jardim botânico ou parque ambiental</text>
+      </subQuestion>
+      <subQuestion varName="TI02_SQ009">
+        <text>planetário</text>
+      </subQuestion>
+      <response varName="TI02">
+        <fixed>
+          <category>
+            <label>Sim</label>
+            <value>Y</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>U</value>
+          </category>
+          <category>
+            <label>Não</label>
+            <value>N</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="699">
+    <sectionInfo>
+      <position>title</position>
+      <text>Hábitos culturais e acesso à informação sobre C&amp;T</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Com que frequência você...</text>
+      <subQuestion varName="HAB01_SQ001">
+        <text>Lê sobre ciência e tecnologia em revistas (sem considerar as revistas científicas, com revisão por pares)?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ002">
+        <text>Ouve programas de rádio que tratam de ciência e tecnologia?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ003">
+        <text>Lê sobre ciência e tecnologia em jornais impressos?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ004">
+        <text>Vê programas de TV que tratam de ciência e tecnologia?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ005">
+        <text>Lê sobre ciência e tecnologia em livros?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ006">
+        <text>Lê sobre ciência e tecnologia na internet ou nas redes sociais?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ007">
+        <text>Conversa com seus amigos sobre ciência e tecnologia?</text>
+      </subQuestion>
+      <subQuestion varName="HAB01_SQ008">
+        <text>Assina/Participa de manifestações relacionadas a ciência e tecnologia?</text>
+      </subQuestion>
+      <response varName="HAB01">
+        <fixed>
+          <category>
+            <label>Frequentemente</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Às vezes</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Raramente</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nunca</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você poderia citar algum produto ou veículo específico de divulgação científica que você aprecia?</text>
+      <directive>
+        <position>during</position>
+        <text>Por gentileza separe cada produto ou veículo por ponto e vírgula ";"</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="hab2">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Considerando as atividades do dia a dia, em sua opinião, a maioria dos cidadãos brasileiros possuem um conhecimento sobre ciência...</text>
+      <response varName="hab3">
+        <fixed>
+          <category>
+            <label>Nulo</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Insuficiente</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Razoável</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Bom</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Muito bom</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em sua opinião, as opiniões da maioria dos cidadãos brasileiros sobre a ciência são geralmente...</text>
+      <response varName="hab4">
+        <fixed>
+          <category>
+            <label>Muito positivas/ de apoio à ciência</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Positivas</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Negativas</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Muito negativas/ de hostilidade à ciência</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em sua opinião, as atitudes a seguir são prejudiciais à ciência?</text>
+      <subQuestion varName="hab5_SQ007">
+        <text>Racismo</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ008">
+        <text>Sexismo e homofobia</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ002">
+        <text>Hesitação em se vacinar ou rejeição das vacinas</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ001">
+        <text>Crença em astrologia/horóscopos</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ003">
+        <text>Ceticismo sobre mudanças climáticas</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ004">
+        <text>Crença na medicina alternativa</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ005">
+        <text>Adesão ao criacionismo ou teoria do Design Inteligente</text>
+      </subQuestion>
+      <subQuestion varName="hab5_SQ006">
+        <text>Terraplanismo</text>
+      </subQuestion>
+      <response varName="hab5">
+        <fixed>
+          <category>
+            <label>Muito prejudicial</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Prejudicial</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Um pouco prejudicial</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Não causa prejuízos</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Irrelevante para a ciência</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Numa escala de 0 a 10, onde 0 significa nada importante e 10 significa a maior importância, na sua opinião, o quão importante é comunicar/explicar para não-cientistas os seguintes aspectos da ciência?</text>
+      <subQuestion varName="hab6_SQ001">
+        <text>A importância dos experimentos para testar as hipóteses</text>
+      </subQuestion>
+      <subQuestion varName="hab6_SQ002">
+        <text>A importância da refutação/falseabilidade das teorias científicas</text>
+      </subQuestion>
+      <subQuestion varName="hab6_SQ003">
+        <text>A importância do conhecimento científico ser produto de uma coletividade</text>
+      </subQuestion>
+      <subQuestion varName="hab6_SQ004">
+        <text>A evolução do conhecimento científico e seus processos</text>
+      </subQuestion>
+      <response varName="hab6">
+        <fixed>
+          <category>
+            <label>1</label>
+            <value>1</value>
+          </category>
+          <category>
+            <label>2</label>
+            <value>2</value>
+          </category>
+          <category>
+            <label>3</label>
+            <value>3</value>
+          </category>
+          <category>
+            <label>4</label>
+            <value>4</value>
+          </category>
+          <category>
+            <label>5</label>
+            <value>5</value>
+          </category>
+          <category>
+            <label>6</label>
+            <value>6</value>
+          </category>
+          <category>
+            <label>7</label>
+            <value>7</value>
+          </category>
+          <category>
+            <label>8</label>
+            <value>8</value>
+          </category>
+          <category>
+            <label>9</label>
+            <value>9</value>
+          </category>
+          <category>
+            <label>10</label>
+            <value>10</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>&lt;p&gt;Numa escala de 0 a 10, onde 0 significa nada importante e 10 significa a maior importância, na sua opinião, o quão importante é comunicar/explicar para não-cientistas as seguintes implicações da ciência?&lt;/p&gt;</text>
+      <subQuestion varName="hab7_SQ001">
+        <text>A importância do conhecimento científico para a vida cotidiana</text>
+      </subQuestion>
+      <subQuestion varName="hab7_SQ002">
+        <text>A importância da ciência para a saúde e o bem-estar</text>
+      </subQuestion>
+      <subQuestion varName="hab7_SQ003">
+        <text>A importância da ciência para o desenvolvimento econômico</text>
+      </subQuestion>
+      <subQuestion varName="hab7_SQ004">
+        <text>A importância da ciência para orientar políticas eficazes</text>
+      </subQuestion>
+      <response varName="hab7">
+        <fixed>
+          <category>
+            <label>1</label>
+            <value>1</value>
+          </category>
+          <category>
+            <label>2</label>
+            <value>2</value>
+          </category>
+          <category>
+            <label>3</label>
+            <value>3</value>
+          </category>
+          <category>
+            <label>4</label>
+            <value>4</value>
+          </category>
+          <category>
+            <label>5</label>
+            <value>5</value>
+          </category>
+          <category>
+            <label>6</label>
+            <value>6</value>
+          </category>
+          <category>
+            <label>7</label>
+            <value>7</value>
+          </category>
+          <category>
+            <label>8</label>
+            <value>8</value>
+          </category>
+          <category>
+            <label>9</label>
+            <value>9</value>
+          </category>
+          <category>
+            <label>10</label>
+            <value>10</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="697">
+    <sectionInfo>
+      <position>title</position>
+      <text>Opiniões sobre ciência e tecnologia na sociedade</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Se você fosse colocar a ciência brasileira num cenário mundial, você diria que ela se encontra atualmente em um nível...</text>
+      <response varName="octs1">
+        <fixed>
+          <category>
+            <label>Avançado</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Intermediário</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Atrasado</label>
+            <value>A3</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Vamos agora falar sobre os riscos e os benefícios da pesquisa científica.  Em sua opinião, a ciência traz para a humanidade...</text>
+      <response varName="octs2">
+        <fixed>
+          <category>
+            <label>Muitos benefícios</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Alguns benefícios</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Poucos benefícios</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nenhum benefício</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em sua opinião, a ciência traz para a humanidade...</text>
+      <response varName="octs3">
+        <fixed>
+          <category>
+            <label>Muitos riscos</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Alguns riscos</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Poucos riscos</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nenhum risco</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>&lt;p&gt;Na sua opinião, a regulação e gestão da ciência e da tecnologia deveria ter a participação de...&lt;/p&gt;</text>
+      <subQuestion varName="octs4_SQ001">
+        <text>representantes políticos eleitos</text>
+      </subQuestion>
+      <subQuestion varName="octs4_SQ002">
+        <text>cientistas especialistas no tema específico a ser regulado</text>
+      </subQuestion>
+      <subQuestion varName="octs4_SQ003">
+        <text>decisões políticas orientadas por evidência científica</text>
+      </subQuestion>
+      <subQuestion varName="octs4_SQ004">
+        <text>participação da sociedade civil na tomada de decisão</text>
+      </subQuestion>
+      <response varName="octs4">
+        <fixed>
+          <category>
+            <label>Concordo totalmente</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Concordo em partes</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Discordo em partes</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Discordo totalmente</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Marque por favor sua concordância ou discordância com estas afirmações sobre ciência e tecnologia.</text>
+      <subQuestion varName="octs5_SQ001">
+        <text>Os governantes devem seguir as orientações dos cientistas</text>
+      </subQuestion>
+      <subQuestion varName="octs5_SQ002">
+        <text>A maioria das pessoas é capaz de entender o conhecimento científico se ele for bem explicado</text>
+      </subQuestion>
+      <subQuestion varName="octs5_SQ003">
+        <text>É necessário que os cientistas exponham publicamente os riscos decorrentes dos desenvolvimentos científicos e tecnológicos</text>
+      </subQuestion>
+      <subQuestion varName="octs5_SQ004">
+        <text>A população deve ser ouvida nas grandes decisões sobre os rumos da ciência e tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="octs5_SQ005">
+        <text>Os cientistas devem ter ampla liberdade para fazer as pesquisas que quiserem</text>
+      </subQuestion>
+      <response varName="octs5">
+        <fixed>
+          <category>
+            <label>Concordo totalmente</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Concordo em parte</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Discordo em parte</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Discordo totalmente</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Entre os temas a seguir, que despertaram algum grau de preocupação na opinião pública, o quanto você está preocupado, como cidadão, com...</text>
+      <subQuestion varName="octs6_SQ001">
+        <text>Alimentos geneticamente modificados</text>
+      </subQuestion>
+      <subQuestion varName="octs6_SQ002">
+        <text>Uso da energia nuclear</text>
+      </subQuestion>
+      <subQuestion varName="octs6_SQ003">
+        <text>Uso de agrotóxicos na agricultura</text>
+      </subQuestion>
+      <subQuestion varName="octs6_SQ004">
+        <text>Efeito das mudanças climáticas</text>
+      </subQuestion>
+      <subQuestion varName="octs6_SQ005">
+        <text>Desmatamento na Amazônia</text>
+      </subQuestion>
+      <subQuestion varName="octs6_SQ006">
+        <text>Danos ao meio ambiente causados por mineração</text>
+      </subQuestion>
+      <response varName="octs6">
+        <fixed>
+          <category>
+            <label>Extremamente preocupado</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Muito preocupado</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Preocupado</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada preocupado</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="695">
+    <sectionInfo>
+      <position>title</position>
+      <text>Opinião sobre divulgação da ciência</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>As afirmações que seguem contêm várias posições que podem ter consequências para a comunicação entre a ciência e o público. Qual a sua opinião sobre cada afirmação?</text>
+      <subQuestion varName="odc1_SQ001">
+        <text>A divulgação científica deve primeiramente sanar o déficit de conhecimento da população em geral</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ002">
+        <text>Um maior conhecimento por parte do público leva a atitudes mais positivas com relação à ciência e tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ003">
+        <text>Uma imagem positiva garante apoio político para a ciência</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ004">
+        <text>O público é suficientemente capaz de participar do processo de tomada de decisão sobre a política de ciência e tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ005">
+        <text>Na divulgação científica, é essencial que se estabeleça um diálogo entre os interlocutores em pé de igualdade</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ006">
+        <text>O público não tem educação suficiente para realmente entender as descobertas científicas</text>
+      </subQuestion>
+      <subQuestion varName="odc1_SQ007">
+        <text>Além de explicar e democratizar o conhecimento, papel da divulgação científica é também o de permitir a participação da população na discussão sobre temas de ciência e tecnologia</text>
+      </subQuestion>
+      <response varName="odc1">
+        <fixed>
+          <category>
+            <label>Concordo totalmente</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Concordo em parte</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Discordo em parte</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Discordo totalmente</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Considerando todas as atividades do seu trabalho, que importância você atribui à comunicação com o público não-especialista?</text>
+      <response varName="odc2">
+        <fixed>
+          <category>
+            <label>Muito importante</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Importante</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Pouco importante</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada importante</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Considerando o seu trabalho atual, qual importância você atribui à comunicação com os seguintes públicos não especialistas:</text>
+      <subQuestion varName="odc3_SQ001">
+        <text>crianças e jovens</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ002">
+        <text>professores da educação básica</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ003">
+        <text>público leigo em geral</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ004">
+        <text>políticos</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ005">
+        <text>especialistas na sua área fora da Universidade</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ006">
+        <text>comitê técnico ou conselho profissional ligado à minha área</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ007">
+        <text>empresários</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ008">
+        <text>mídia, jornalistas</text>
+      </subQuestion>
+      <subQuestion varName="odc3_SQ009">
+        <text>associações, sindicatos e grupos de interesse</text>
+      </subQuestion>
+      <response varName="odc3">
+        <fixed>
+          <category>
+            <label>Muito importante</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Importante</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Um pouco importante</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada importante</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Das frases abaixo, marque até três opções que refletem, na sua opinião, os motivos MAIS IMPORTANTES para que você, em seu trabalho como cientista, se comunique com o público não especialista?</text>
+      <directive>
+        <position>during</position>
+        <text>Por favor marque apenas as 3 frases que você considera mais importantes</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="odc4_SQ001">
+        <fixed>
+          <category>
+            <label>Para diminuir a lacuna de conhecimento que há entre os cientistas e o público.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ002">
+        <fixed>
+          <category>
+            <label>Para que o diálogo e a escuta da população tragam boas ideias para os rumos do meu trabalho como cientista.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ003">
+        <fixed>
+          <category>
+            <label>Para que a população consiga participar melhor do debate público em questões controversas.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ004">
+        <fixed>
+          <category>
+            <label>Porque a ciência não deve lidar sozinha com as consequências éticas, sociais e políticas de seus resultados, é necessário dialogar com a sociedade.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ005">
+        <fixed>
+          <category>
+            <label>Para que a população perca o medo e a desconfiança da ciência e da tecnologia.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ006">
+        <fixed>
+          <category>
+            <label>Para que a população não acredite em fake-news e teorias da conspiração.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ007">
+        <fixed>
+          <category>
+            <label>Porque grupos de interesse organizados e mobilizados podem colaborar com pesquisas científicas, gerando avanços importantes no meu campo de atuação.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ008">
+        <fixed>
+          <category>
+            <label>Considero que meu tempo de trabalho não deveria ser gasto me comunicando com o público não-especialista.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="odc4_SQ009">
+        <fixed>
+          <category>
+            <label>Porque a população diretamente impactada com minha pesquisa deve ser ouvida quanto aos seus possíveis impactos e tem o direito de conhecer seus resultados.</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="694">
+    <sectionInfo>
+      <position>title</position>
+      <text>Atividades de divulgação científica e comunicação com não-especialistas</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Entre as seguintes atividades de divulgação científica, nos últimos 12 meses quantas vezes você...</text>
+      <directive>
+        <position>during</position>
+        <text>Todas as atividades devem ter como público alvo prioritário a população não-especialista.</text>
+        <administration>self</administration>
+      </directive>
+      <subQuestion varName="adc1_SQ001">
+        <text>Deu uma palestra pública num debate para o público em geral</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ002">
+        <text>Participou de curso de formação a um público externo à sua Universidade ou instituto de pesquisa</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ003">
+        <text>Deu uma aula ou oficina numa escola da Educação Básica</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ004">
+        <text>Participou em evento numa comissão técnica ou conselho profissional (exterior à Universidade ou instituto de pesquisa)</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ005">
+        <text>Participou de uma atividade do  “Pint of Science”</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ006">
+        <text>Participou de uma atividade do Dia da Ciência ou da Semana Nacional de Ciência e Tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ007">
+        <text>Participou em evento numa associação, ONG ou movimento social</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ008">
+        <text>Escreveu um artigo numa revista para o público em geral</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ009">
+        <text>Foi entrevistado para um jornal ou revista para o público em geral</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ010">
+        <text>Escreveu um livro ou capítulo de livro de divulgação científica</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ011">
+        <text>Escreveu um release para a imprensa ou participou de um programa de TV ou rádio</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ012">
+        <text>Participou de uma audiência pública no poder legislativo (Câmara, Assembléia, Congresso Nacional)</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ013">
+        <text>Conduziu uma visita guiada num (ou em colaboração com um) museu</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ014">
+        <text>Participou de um programa em mídias digitais (blog, YouTube, podcast, live no Instagram, etc.)</text>
+      </subQuestion>
+      <subQuestion varName="adc1_SQ015">
+        <text>Produziu conteúdo para seu canal próprio em mídias digitais (blog, YouTube, podcast, live no Instagram, etc.)</text>
+      </subQuestion>
+      <response varName="adc1">
+        <fixed>
+          <category>
+            <label>Nenhuma vez</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>1 vez</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>2 vezes</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>3 vezes</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>4 vezes</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>5 vezes</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>mais de 5 vezes</label>
+            <value>A7</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Quando você conclui uma pesquisa, você entra em contato com a mídia para comunicar os resultados?</text>
+      <response varName="adc2">
+        <fixed>
+          <category>
+            <label>Em geral sim</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Frequentemente</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Raramente</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Em geral, não</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não se aplica a mim</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>No seu caso, qual importância tem os seguintes profissionais para a sua comunicação com o público não-especialista:</text>
+      <subQuestion varName="adc3_SQ001">
+        <text>Assessoria de comunicação geral de minha universidade ou instituto de pesquisa</text>
+      </subQuestion>
+      <subQuestion varName="adc3_SQ002">
+        <text>Assessoria de comunicação de meu laboratório ou unidade acadêmica</text>
+      </subQuestion>
+      <subQuestion varName="adc3_SQ003">
+        <text>Mídia, jornalistas</text>
+      </subQuestion>
+      <subQuestion varName="adc3_SQ004">
+        <text>Profissionais de museus</text>
+      </subQuestion>
+      <response varName="adc3">
+        <fixed>
+          <category>
+            <label>Muito importante</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Importante</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Pouco importante</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada importante</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Quando você se comunica com o público não-especialista, este diálogo se dá principalmente...</text>
+      <response varName="adc8">
+        <fixed>
+          <category>
+            <label>Sobre os resultados de sua pesquisa</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Sobre o seu objeto de pesquisa, mas não necessariamente sobre os resultados da sua pesquisa</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Sobre temas controversos de interesse público nos quais você tem alguma expertise.</label>
+            <value>A3</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Quantas vezes você foi solicitado/a por jornalistas (qualquer mídia), diretamente ou por terceiros, nos últimos 12 meses?</text>
+      <directive>
+        <position>during</position>
+        <text>Por favor digite apenas números</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="adc4">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>E quantas vezes você aceitou?</text>
+      <directive>
+        <position>during</position>
+        <text>Por favor digite apenas números</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="adc5">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Em geral, de que modo você é solicitado/a pela mídia?</text>
+      <subQuestion varName="adc6_SQ001">
+        <text>Diretamente</text>
+      </subQuestion>
+      <subQuestion varName="adc6_SQ002">
+        <text>Via assessoria de comunicação geral de minha universidade ou instituto de pesquisa</text>
+      </subQuestion>
+      <subQuestion varName="adc6_SQ003">
+        <text>Via assessoria de comunicação de meu laboratório ou unidade acadêmica</text>
+      </subQuestion>
+      <response varName="adc6">
+        <fixed>
+          <category>
+            <label>Nunca</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Raramente</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Frequentemente</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Não se aplica a mim</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você colabora com algum parque ou incubadora tecnológico(a), ligado(a) ou não à sua Universidade ou Instituto de Pesquisa?</text>
+      <response varName="adc07">
+        <fixed>
+          <category>
+            <label>Sim</label>
+            <value>Y</value>
+          </category>
+          <category>
+            <label>Não</label>
+            <value>N</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="701">
+    <sectionInfo>
+      <position>title</position>
+      <text>Motivações e obstáculos</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Marque os elementos mais importantes que, para você pessoalmente, são uma motivação para comunicar seu trabalho a um público não-especialista:</text>
+      <response varName="MO01_SQ001">
+        <fixed>
+          <category>
+            <label>Para mim, não há motivações</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ002">
+        <fixed>
+          <category>
+            <label>Prazer, desejo pessoal</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ003">
+        <fixed>
+          <category>
+            <label>Útil para minha carreira acadêmica</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ004">
+        <fixed>
+          <category>
+            <label>Atrair fundos para a pesquisa</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ005">
+        <fixed>
+          <category>
+            <label>Prestação de serviços a quem nos financia</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ006">
+        <fixed>
+          <category>
+            <label>Informar as pessoas, ensinar</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ007">
+        <fixed>
+          <category>
+            <label>Contribuir ao debate público sobre a ciência</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ008">
+        <fixed>
+          <category>
+            <label>Conscientizar as pessoas, dar meios de moldar o mundo</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ009">
+        <fixed>
+          <category>
+            <label>Reforçar a imagem de meu laboratório/faculdade/unidade acadêmica</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ010">
+        <fixed>
+          <category>
+            <label>Reforçar a imagem da minha Universidade/Instituto de Pesquisa</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ011">
+        <fixed>
+          <category>
+            <label>Os colegas de unidade o fazem</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ012">
+        <fixed>
+          <category>
+            <label>Inspirar vocações, atrair estudantes</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO01_SQ013">
+        <fixed>
+          <category>
+            <label>Simplesmente é parte de meu trabalho</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Marque os elementos mais importantes que, para você pessoalmente, são um obstáculo para comunicar seu trabalho a um público não-especialista:</text>
+      <response varName="MO02_SQ001">
+        <fixed>
+          <category>
+            <label>Para mim não há obstáculos</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ002">
+        <fixed>
+          <category>
+            <label>Me tira muito tempo</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ003">
+        <fixed>
+          <category>
+            <label>Este tipo de atividade não é valorizado na minha carreira de pesquisador ou docente</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ004">
+        <fixed>
+          <category>
+            <label>Meus colegas enxergam com maus olhos</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ005">
+        <fixed>
+          <category>
+            <label>Falta de dinheiro, o dinheiro deve ser utilizado na pesquisa</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ006">
+        <fixed>
+          <category>
+            <label>Não tenho competência para fazê-lo</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ007">
+        <fixed>
+          <category>
+            <label>Minhas pesquisas não interessam ao público não-especialista</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ008">
+        <fixed>
+          <category>
+            <label>Os colegas de unidade não o fazem</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ009">
+        <fixed>
+          <category>
+            <label>Meus resultados podem ser deturpados e mal utilizados (pela mídia, por políticos, etc.)</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ010">
+        <fixed>
+          <category>
+            <label>As pessoas não têm meios para compreender</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ011">
+        <fixed>
+          <category>
+            <label>Não faz parte do meu trabalho</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO02_SQ012">
+        <fixed>
+          <category>
+            <label>No meu trabalho, eu não busco publicidade</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Quais das seguintes medidas encorajariam você a comunicar-se mais com o público não-especialista:</text>
+      <response varName="MO03_SQ001">
+        <fixed>
+          <category>
+            <label>Inscrição de tarefas de divulgação científica no relatório de atividades</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ002">
+        <fixed>
+          <category>
+            <label>Oferta de recursos para este fim específico por meio de editais e chamadas</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ003">
+        <fixed>
+          <category>
+            <label>Criação de premiação para um indivíduo ou um laboratório/unidade acadêmica particularmente ativo(a) na divulgação científica</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ004">
+        <fixed>
+          <category>
+            <label>Oferta de curso de formação na área</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ005">
+        <fixed>
+          <category>
+            <label>Política mas ativa no meu laboratório/unidade</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ006">
+        <fixed>
+          <category>
+            <label>Política mais ativa por parte da direção da minha universidade ou instituto de pesquisa</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ007">
+        <fixed>
+          <category>
+            <label>Se esta dimensão fosse considerada nos processos seletivos ou de progressão acadêmica da minha universidade ou instituto de pesquisa</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+      <response varName="MO03_SQ008">
+        <fixed>
+          <category>
+            <label>Se esta dimensão fosse considerada nos critérios de seleção por parte das agências de fomento</label>
+            <value>Y</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você conhece ou participou de alguma destas iniciativas de formação em divulgação científica?</text>
+      <subQuestion varName="MO04_SQ001">
+        <text>Oficina/workshop</text>
+      </subQuestion>
+      <subQuestion varName="MO04_SQ002">
+        <text>Curso de curta duração</text>
+      </subQuestion>
+      <subQuestion varName="MO04_SQ003">
+        <text>Pós-graduação Latu Sensu</text>
+      </subQuestion>
+      <subQuestion varName="MO04_SQ004">
+        <text>Mestrado ou Doutorado</text>
+      </subQuestion>
+      <response varName="MO04">
+        <fixed>
+          <category>
+            <label>Não conheço</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Conheço mas não participei</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Participei como aluno</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Participei como docente</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você acha que as agências de fomento à pesquisa científica deveriam encorajar e reconhecer mais as atividades de divulgação científica em projetos de pesquisa que elas financiam?</text>
+      <response varName="MO05">
+        <fixed>
+          <category>
+            <label>Concordo totalmente</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Concordo parcialmente</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Discordo parcialmente</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Discordo totalmente</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você participou de algum evento de divulgação científica? Em caso afirmativo, se tratou de qual tipo de evento?</text>
+      <subQuestion varName="MO06_SQ001">
+        <text>Semana Nacional de Ciência e Tecnologia</text>
+      </subQuestion>
+      <subQuestion varName="MO06_SQ002">
+        <text>Feiras ou Mostras Científicas</text>
+      </subQuestion>
+      <subQuestion varName="MO06_SQ003">
+        <text>Olimpíadas de ciências ou do conhecimento</text>
+      </subQuestion>
+      <subQuestion varName="MO06_SQ004">
+        <text>Congresso ou Simpósio de Divulgação científica</text>
+      </subQuestion>
+      <response varName="MO06">
+        <fixed>
+          <category>
+            <label>Não conheço</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Conheço mas não participei</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Participei como aluno</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Participei como docente</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>&lt;p&gt;Você tem conhecimento do plano de divulgação científica que tem sido solicitado pelo CNPq em chamadas públicas para projetos?&lt;/p&gt;&#13;
+&#13;
+&lt;p&gt;</text>
+      <text>(Trata-se de um plano solicitado em todas as áreas do conhecimento, como parte das características da proposta, como critério de julgamento e também como parte dos objetivos, para "promover ações de educação, popularização e/ou divulgação científica para diferentes tipos de público, alcançando amplos setores da sociedade, em articulação com especialistas, grupos e instituições que atuam nas áreas de educação formal e não formal”)&lt;/p&gt;</text>
+      <response varName="MO07">
+        <fixed>
+          <category>
+            <label>Sim</label>
+            <value>Y</value>
+          </category>
+          <category>
+            <label>Não</label>
+            <value>N</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="700">
+    <sectionInfo>
+      <position>title</position>
+      <text>Valores e participação política</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Quais das seguintes organizações e/ou associações voluntárias você pertence e/ou frequenta?</text>
+      <subQuestion varName="VAL01_SQ001">
+        <text>Igreja ou grupo religioso</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ002">
+        <text>Associação esportiva ou recreativa</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ003">
+        <text>Associação artística, musical ou educacional</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ004">
+        <text>Sindicato</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ005">
+        <text>Partido político</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ006">
+        <text>Associação de defesa do meio ambiente</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ007">
+        <text>Associação profissional, ou seja, um grupo de profissionais voluntários da mesma área com interesses em comum</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ008">
+        <text>Associação humanitária ou de caridade</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ009">
+        <text>Associação de consumidores</text>
+      </subQuestion>
+      <subQuestion varName="VAL01_SQ010">
+        <text>Grupo de autoajuda, grupo de ajuda mútua</text>
+      </subQuestion>
+      <response varName="VAL01">
+        <fixed>
+          <category>
+            <label>Pertenço e frequento</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Pertenço, mas não frequento muito</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Não pertenço</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Quais das seguintes formas de atuação política você já fez ou poderia vir a fazer?</text>
+      <subQuestion varName="VAL02_SQ001">
+        <text>Assinou um abaixo assinado</text>
+      </subQuestion>
+      <subQuestion varName="VAL02_SQ002">
+        <text>Participou de algum boicote</text>
+      </subQuestion>
+      <subQuestion varName="VAL02_SQ003">
+        <text>Participou de manifestações pacíficas</text>
+      </subQuestion>
+      <subQuestion varName="VAL02_SQ004">
+        <text>Participou de greves</text>
+      </subQuestion>
+      <subQuestion varName="VAL02_SQ005">
+        <text>Participou de qualquer outro ato de protesto</text>
+      </subQuestion>
+      <response varName="VAL02">
+        <fixed>
+          <category>
+            <label>Sim, já fiz</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Não fiz, mas poderia fazer</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Não fiz, e não faria de jeito nenhum</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Não sei</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+  </section>
+  <section id="693">
+    <sectionInfo>
+      <position>title</position>
+      <text>Caracterização do Entrevistado</text>
+      <administration>self</administration>
+    </sectionInfo>
+    <question>
+      <text>Quantos anos você tem?</text>
+      <directive>
+        <position>during</position>
+        <text>Digite apenas números</text>
+        <administration>self</administration>
+      </directive>
+      <response varName="CE01">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Qual é o seu sexo?</text>
+      <response varName="CE02">
+        <fixed>
+          <category>
+            <label>Feminino</label>
+            <value>F</value>
+          </category>
+          <category>
+            <label>Masculino</label>
+            <value>M</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Até qual série a sua mãe estudou na escola, ou seja, qual a escolaridade dela?</text>
+      <response varName="CE03">
+        <fixed>
+          <category>
+            <label>Não frequentou escola</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Ensino Fundamental Incompleto</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Ensino Fundamental</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Ensino Médio Incompleto</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Ensino Médio</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Ensino Superior Incompleto</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Ensino Superior</label>
+            <value>A7</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual sua cor ou raça?</text>
+      <response varName="CE04">
+        <fixed>
+          <category>
+            <label>Branca</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Preta</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Amarela</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Parda</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Indígena</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Você pertence a alguma religião ou grupo religioso/espiritualista?</text>
+      <response varName="CE05">
+        <fixed>
+          <category>
+            <label>Cristã católica (Apostólica Romana, Apostólica Brasileira Ortodoxa, Renovação Carismática, Maronita)</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Cristã evangélica Pentecostal e Neopentecostal (Assembleia de Deus, Congregação Cristã do Brasil, Igreja Universal do Reino de Deus, Evangelho Quadrangular, Igreja Mundial do Poder de Deus, Brasil para Cristo, Deus é Amor, Maranata, Nova Vida)</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Cristã Protestantes históricas (Batistas, Presbiterianos, Luteranos, Metodistas, Adventistas)</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Espírita (Kardecista)</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Matrizes africanas (Candomblé, Umbanda)</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Religiões Orientais (como Budismo, Hinduísmo, Xintoísmo)</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Judaísmo</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Islamismo</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Tradições indígenas</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Ateu ou agnóstico</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Não tenho religião</label>
+            <value>A11</value>
+          </category>
+          <category>
+            <label>Outros</label>
+            <value>-oth-</value>
+            <contingentQuestion varName="CE05other">
+              <text>Outros</text>
+              <length>24</length>
+              <format>longtext</format>
+            </contingentQuestion>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>&lt;p dir="ltr" id="docs-internal-guid-955565e2-7fff-7d78-89d7-e2dbc831c3f5"&gt;Você diria que a religião, em sua vida pessoal, é...&lt;/p&gt;</text>
+      <response varName="CE06">
+        <fixed>
+          <category>
+            <label>Muito importante</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Importante</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Pouco importante</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Nada importante</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>A ciência que você desenvolve hoje é melhor identificada como:</text>
+      <response varName="CE10">
+        <fixed>
+          <category>
+            <label>ciência aplicada</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>ciência básica</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>tanto ciência básica como aplicada</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>não se aplica</label>
+            <value>A4</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Do ponto de vista do posicionamento político, você considera que a expressão que mais se aproxima de sua orientação é...</text>
+      <response varName="CE07">
+        <fixed>
+          <category>
+            <label>De centro</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>De esquerda</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Liberal</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Conservador</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>De direita</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Nenhuma dessas</label>
+            <value>A6</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em qual nível de Bolsa Produtividade do CNPq você se enquadra?</text>
+      <response varName="CE08">
+        <fixed>
+          <category>
+            <label>Sênior</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>1A</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>1B</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>1C</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>1D</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>2</label>
+            <value>A6</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em qual universidade ou instituto de pesquisa você trabalha atualmente?</text>
+      <response varName="CE09">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a grande área do conhecimento de sua atuação?</text>
+      <response varName="CE11">
+        <fixed>
+          <category>
+            <label>Ciências Exatas e da Terra</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Ciências Biológicas</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Engenharias</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Ciências da Saúde</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Ciências Agrárias</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Ciências Sociais Aplicadas</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Ciências Humanas</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Linguística, Letras e Artes</label>
+            <value>A8</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12agrarias">
+        <fixed>
+          <category>
+            <label>Agronomia</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Recursos Florestais e Engenharia Florestal</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Engenharia Agrícola</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Zootecnia</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Medicina Veterinária</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Recursos Pesqueiros e Engenharia de Pesca</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Ciência e Tecnologia de Alimentos</label>
+            <value>A7</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12biologicas">
+        <fixed>
+          <category>
+            <label>Biologia Geral</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Genética</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Botânica</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Zoologia</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Ecologia</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Morfologia</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Fisiologia</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Bioquímica</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Biofísica</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Imunologia</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Microbiologia</label>
+            <value>A11</value>
+          </category>
+          <category>
+            <label>Parasitologia</label>
+            <value>A12</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12engenharias">
+        <fixed>
+          <category>
+            <label>Engenharia Civil</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Engenharia de Minas</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Engenharia de Materiais e Metalúrgica</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Engenharia Elétrica</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Engenharia Mecânica</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Engenharia Química</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Engenharia Sanitária</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Engenharia de Produção</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Engenharia Nuclear</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Engenharia de Transportes</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Engenharia Naval e Oceânica</label>
+            <value>A11</value>
+          </category>
+          <category>
+            <label>Engenharia Aeroespacial</label>
+            <value>A12</value>
+          </category>
+          <category>
+            <label>Engenharia Biomédica</label>
+            <value>A13</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12exatas">
+        <fixed>
+          <category>
+            <label>Matemática</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Probabilidade e Estatística</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Ciência da Computação</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Astronomia</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Física</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Química</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Geociências</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Oceanografia</label>
+            <value>A8</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12humanas">
+        <fixed>
+          <category>
+            <label>Filosofia</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Sociologia</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Antropologia</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Arqueologia</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>História</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Geografia</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Psicologia</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Educação</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Ciência Política</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Teologia</label>
+            <value>A10</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12letrasartes">
+        <fixed>
+          <category>
+            <label>Linguística</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Letras</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Artes</label>
+            <value>A3</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12saude">
+        <fixed>
+          <category>
+            <label>Medicina</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Odontologia</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Farmácia</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Enfermagem</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Nutrição</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Saúde coletiva</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Fonoaudiologia</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Fisioterapia e Terapia Ocupacional</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Educação Física</label>
+            <value>A9</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Qual é a sub-área do conhecimento de sua atuação?</text>
+      <response varName="CE12sociaisaplicadas">
+        <fixed>
+          <category>
+            <label>Direito</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Administração</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Economia</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Arquitetura e Urbanismo</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Planejamento Urbano e Regional</label>
+            <value>A5</value>
+          </category>
+          <category>
+            <label>Demografia</label>
+            <value>A6</value>
+          </category>
+          <category>
+            <label>Ciência da Informação</label>
+            <value>A7</value>
+          </category>
+          <category>
+            <label>Museologia</label>
+            <value>A8</value>
+          </category>
+          <category>
+            <label>Comunicação</label>
+            <value>A9</value>
+          </category>
+          <category>
+            <label>Serviço Social</label>
+            <value>A10</value>
+          </category>
+          <category>
+            <label>Economia Doméstica</label>
+            <value>A11</value>
+          </category>
+          <category>
+            <label>Desenho Industrial</label>
+            <value>A12</value>
+          </category>
+          <category>
+            <label>Turismo</label>
+            <value>A13</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Em qual região do Brasil sua instituição se encontra?</text>
+      <response varName="CE13">
+        <fixed>
+          <category>
+            <label>Norte</label>
+            <value>A1</value>
+          </category>
+          <category>
+            <label>Nordeste</label>
+            <value>A2</value>
+          </category>
+          <category>
+            <label>Centro-Oeste</label>
+            <value>A3</value>
+          </category>
+          <category>
+            <label>Sudeste</label>
+            <value>A4</value>
+          </category>
+          <category>
+            <label>Sul</label>
+            <value>A5</value>
+          </category>
+        </fixed>
+      </response>
+    </question>
+    <question>
+      <text>Há quantos anos você está vinculado a esta universidade ou instituto de pesquisa?</text>
+      <response varName="CE14">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+    <question>
+      <text>Há quantos anos você atua em pesquisa científica ou docência universitária?</text>
+      <response varName="CE15">
+        <free>
+          <format>longtext</format>
+          <length>24</length>
+          <label></label>
+        </free>
+      </response>
+    </question>
+  </section>
+</questionnaire>
