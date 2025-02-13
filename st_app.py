@@ -36,7 +36,9 @@ tabs = st.tabs([
 
 # Aba 1: Frequência por Tipo de Atividade
 with tabs[0]:
-    st.header("Frequência por Tipo de Atividade")
+    # st.header("Frequência por Tipo de Atividade")
+
+    st.subheader("Entre as seguintes atividades de divulgação científica, nos últimos 12 meses quantas vezes você...")
 
     # Gráfico de barras
     # Criar o gráfico com a ordem específica das atividades
@@ -53,6 +55,32 @@ with tabs[0]:
         }
     )
     st.plotly_chart(fig_freq, use_container_width=True)
+
+    st.write("**Legenda das respostas**")
+    dicionario = {
+    'palestra público geral': 'Deu uma palestra pública num debate para o público em geral',
+    'curso público externo': 'Participou de curso de formação a um público externo à sua Universidade ou instituto de pesquisa',
+    'aula oficina escola básica': 'Deu uma aula ou oficina numa escola da Educação Básica',
+    'comissão técnica ou conselho prof.': 'Participou em evento numa comissão técnica ou conselho profissional (exterior à Universidade ou instituto de pesquisa)',
+    'Pint of Science': 'Participou de uma atividade do “Pint of Science”',
+    'Dia Ciência Semana Nacional C&T': 'Participou de uma atividade do Dia da Ciência ou da Semana Nacional de Ciência e Tecnologia',
+    'evento ONG movimento social': 'Participou em evento numa associação, ONG ou movimento social',
+    'artigo revista público geral': 'Escreveu um artigo numa revista para o público em geral',
+    'entrevista jornal revista público geral': 'Foi entrevistado para um jornal ou revista para o público em geral',
+    'livro ou capítulo de divulgação': 'Escreveu um livro ou capítulo de livro de divulgação científica',
+    'release programa TV rádio': 'Escreveu um release para a imprensa ou participou de um programa de TV ou rádio',
+    'audiência pública': 'Participou de uma audiência pública no poder legislativo (Câmara, Assembléia, Congresso Nacional)',
+    'visita guiada museu': 'Conduziu uma visita guiada num (ou em colaboração com um) museu',
+    'programa mídias digitais': 'Participou de um programa em mídias digitais (blog, YouTube, podcast, live no Instagram, etc.)',
+    'midias digitais canal próprio': 'Produziu conteúdo para seu canal próprio em mídias digitais (blog, YouTube, podcast, live no Instagram, etc.)'
+    }
+    # Criando uma lista de dicionários para a tabela
+    tabela = []
+    for chave, valor in dicionario.items():
+        tabela.append({"Atividade": chave, "Descrição": valor})
+
+    # Exibindo a tabela no Streamlit
+    st.table(tabela)  # Ou use st.dataframe(tabela) para uma tabela interativa
 
 # Aba 2: Mosaico da Atividade por Variáveis Sociodemográficas
 with tabs[1]:
@@ -117,14 +145,24 @@ with tabs[3]:
     st.header("Sobre a Pesquisa")
 
     st.write('''
-             Este survey online foi realizado com o objetivo de entender as percepções e opiniões dos cientistas brasileiros em relação à divulgação científica. 
+             Este _survey_ online foi realizado com o objetivo de entender as percepções e opiniões dos cientistas brasileiros em relação à divulgação científica. 
              A pesquisa focou em bolsistas de produtividade em pesquisa (PQ) do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), uma população 
              conhecida por sua alta atividade na produção científica.  \n
              Para coletar as informações, foi elaborado um questionário online autoaplicado, que continha 51 perguntas organizadas em sete seções, abordando desde temas de interesse 
              e hábitos culturais até atividades de divulgação científica e opiniões sobre ciência e tecnologia na sociedade.  \n
              Os participantes foram convidados por e-mail. Apesar das limitações inerentes a métodos quantitativos, que podem não capturar a complexidade de algumas percepções, 
-             o estudo busca oferecer insights significativos sobre as dinâmicas de comunicação científica entre cientistas e o público. Esse esforço é crucial para o 
+             o estudo busca oferecer _insights_ significativos sobre as dinâmicas de comunicação científica entre cientistas e o público. Esse esforço é crucial para o 
              desenvolvimento de estratégias mais eficazes de divulgação da ciência, moldadas pela compreensão das opiniões e experiências dos próprios cientistas.
+             ''')
+    
+    st.write('''
+             Outros estudos que exploram e analisam a mesma base de dados podem ser encontrados em:
+            ''')
+    st.write('''
+            Pereira, M., Castelfranchi, Y., & Massarani, L. (2024). Científicos brasileños y divulgación científica: Una propuesta de clasificación. **Revista Iberoamericana De Ciencia, Tecnología Y Sociedad - CTS**. 
+             Retrieved from https://ojs.revistacts.net/index.php/CTS/article/view/779  \n
+            Pereira, M. **Ciência, sociedade, divulgação científica: a visão dos cientistas**. 2023. 167 p. Dissertação de Mestrado em Sociologia - Universidade Federal de Minas Gerais, 
+             Belo Horizonte, 2023. http://hdl.handle.net/1843/55328
              ''')
 
 # Aba 5: Metodologia
