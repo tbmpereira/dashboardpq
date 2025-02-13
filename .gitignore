@@ -8,6 +8,8 @@ venv/
 env/
 .venv/
 logs/
+app.py
+.~lock.data_tratado.csv#
 
 # Arquivos
 *.pyc
@@ -20,3 +22,5 @@ logs/
 .DS_Store
 Thumbs.db
 .env
+*ipynb
+
