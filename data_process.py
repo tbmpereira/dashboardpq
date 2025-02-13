@@ -182,8 +182,8 @@ codigo_variaveis = {
 tabela_p = criar_tabela_valores_p(df, codigo_atividades, codigo_variaveis)
 
 # Renomear index e colunas de tabela_p
-# tabela_p.index = [varmap[codigo] for codigo in codigo_atividades]
-# tabela_p.columns = [codigo_variaveis[codigo] for codigo in codigo_variaveis]
+tabela_p.index = [varmap[codigo] for codigo in codigo_atividades]
+tabela_p.columns = [codigo_variaveis[codigo] for codigo in codigo_variaveis]
 
 # Aplicar estilos condicionais
-# tabela_estilizada = tabela_p.style.map(destacar_p_significativo)
+tabela_estilizada = tabela_p.style.map(destacar_p_significativo)

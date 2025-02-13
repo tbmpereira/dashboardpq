@@ -4,7 +4,7 @@ import plotly.express as px
 import pickle
 from graphs import plot_mosaic_with_residuals
 from matplotlib import pyplot as plt
-from data_process import df, varmap, ordered_categories, ordered_activities, dff_freq, atividades, variaveis_demograficas, tabela_p, codigo_variaveis, codigo_atividades
+from data_process import df, varmap, ordered_categories, ordered_activities, dff_freq, tabela_estilizada, codigo_variaveis, codigo_atividades
 from io import BytesIO
 
 # Carregar o mapeamento de variáveis
@@ -104,6 +104,8 @@ with tabs[1]:
 with tabs[2]:
     st.header("Correlações entre Atividades e Variáveis Sociodemográficas")
 
+    st.dataframe(tabela_estilizada)
+
     # st.write('''
     #     A tabela acima mostra o valor de p para o teste Qui-quadrado de independência entre cada atividade e variável sociodemográfica.
     #     Quando há significância estatística (p < 0,05), a célula é destacada em amarelo. Isso indica que a atividade e a variável de interesse
@@ -113,6 +115,17 @@ with tabs[2]:
 # Aba 4: Sobre a Pesquisa
 with tabs[3]:
     st.header("Sobre a Pesquisa")
+
+    st.write('''
+             Este survey online foi realizado com o objetivo de entender as percepções e opiniões dos cientistas brasileiros em relação à divulgação científica. 
+             A pesquisa focou em bolsistas de produtividade em pesquisa (PQ) do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), uma população 
+             conhecida por sua alta atividade na produção científica.  \n
+             Para coletar as informações, foi elaborado um questionário online autoaplicado, que continha 51 perguntas organizadas em sete seções, abordando desde temas de interesse 
+             e hábitos culturais até atividades de divulgação científica e opiniões sobre ciência e tecnologia na sociedade.  \n
+             Os participantes foram convidados por e-mail. Apesar das limitações inerentes a métodos quantitativos, que podem não capturar a complexidade de algumas percepções, 
+             o estudo busca oferecer insights significativos sobre as dinâmicas de comunicação científica entre cientistas e o público. Esse esforço é crucial para o 
+             desenvolvimento de estratégias mais eficazes de divulgação da ciência, moldadas pela compreensão das opiniões e experiências dos próprios cientistas.
+             ''')
 
 # Aba 5: Metodologia
 with tabs[4]:
