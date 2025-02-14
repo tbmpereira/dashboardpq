@@ -1,11 +1,24 @@
 import streamlit as st
-# from st_aggrid import AgGrid, GridOptionsBuilder
-import plotly.express as px
 import pickle
+from data_process import varmap, codigo_variaveis, df, ordered_categories, ordered_activities, dff_freq, codigo_atividades, tabela_estilizada
+import plotly.express as px
 from graphs import plot_mosaic_with_residuals
-from matplotlib import pyplot as plt
-from data_process import df, varmap, ordered_categories, ordered_activities, dff_freq, tabela_estilizada, codigo_variaveis, codigo_atividades
 from io import BytesIO
+
+# Configuração inicial do Streamlit
+st.set_page_config(
+    page_title="Cientistas e Divulgação Científica: Opiniões e Práticas",
+    layout="wide"
+)
+
+# Menu de Navegação entre as páginas
+with st.sidebar:
+    st.page_link("app.py", label="Página Inicial")
+    st.page_link("pages/atividades.py", label="Atividades de Divulgação Científica")
+    st.page_link("pages/opinioes_ct.py", label="Opiniões sobre Ciência e Tecnologia")
+    st.page_link("pages/opinioes_dc.py", label="Opiniãos sobre Divulgação Científica")
+    st.page_link("pages/motivacoes.py", label="Motivações e Obstáculos")
+    st.page_link("pages/sociodemografico.py", label="Perfil Sociodemográfico")
 
 # Carregar o mapeamento de variáveis
 with open("varmap.pkl", "rb") as f:
@@ -14,24 +27,10 @@ with open("varmap.pkl", "rb") as f:
 dict_atividades = {key: value for key, value in varmap.items() if "adc1[SQ" in key}
 dict_variaveis = codigo_variaveis
 
-# Configuração inicial do Streamlit
-st.set_page_config(
-    page_title="Atividade de divulgação científica de bolsistas produtividade CNPq",
-    layout="wide"
-)
-
-# Título do dashboard
-st.title("Atividade de divulgação científica de bolsistas produtividade CNPq")
-
-# Abas
-
 tabs = st.tabs([
     "Frequência por Tipo de Atividade",
     "Mosaico da Atividade por Variáveis Sociodemográficas",
     "Correlações entre Atividades e Variáveis Sociodemográficas",
-    "Sobre a Pesquisa",
-    "Metodologia",
-    "Sobre o Autor"
                 ])
 
 # Aba 1: Frequência por Tipo de Atividade
@@ -127,85 +126,15 @@ with tabs[1]:
         atividade e a variável é significativa (p < 0,05). Assim, quanto mais vermelha significa que esta frequência é maior do que
         o esperado para aquela categoria, enquanto que azul significa que a frequência é menor do que o esperado.
         ''')
-
+    
 # Aba 3: Correlações entre Atividades e Variáveis Sociodemográficas
 with tabs[2]:
     st.header("Correlações entre Atividades e Variáveis Sociodemográficas")
 
-    st.dataframe(tabela_estilizada)
+    st.dataframe(tabela_estilizada, height=560)
 
     # st.write('''
     #     A tabela acima mostra o valor de p para o teste Qui-quadrado de independência entre cada atividade e variável sociodemográfica.
     #     Quando há significância estatística (p < 0,05), a célula é destacada em amarelo. Isso indica que a atividade e a variável de interesse
     #     estão correlacionadas.
     # ''')
-
-# Aba 4: Sobre a Pesquisa
-with tabs[3]:
-    st.header("Sobre a Pesquisa")
-
-    st.write('''
-             Este _survey_ online foi realizado com o objetivo de entender as percepções e opiniões dos cientistas brasileiros em relação à divulgação científica. 
-             A pesquisa focou em bolsistas de produtividade em pesquisa (PQ) do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), uma população 
-             conhecida por sua alta atividade na produção científica.  \n
-             Para coletar as informações, foi elaborado um questionário online autoaplicado, que continha 51 perguntas organizadas em sete seções, abordando desde temas de interesse 
-             e hábitos culturais até atividades de divulgação científica e opiniões sobre ciência e tecnologia na sociedade.  \n
-             Os participantes foram convidados por e-mail. Apesar das limitações inerentes a métodos quantitativos, que podem não capturar a complexidade de algumas percepções, 
-             o estudo busca oferecer _insights_ significativos sobre as dinâmicas de comunicação científica entre cientistas e o público. Esse esforço é crucial para o 
-             desenvolvimento de estratégias mais eficazes de divulgação da ciência, moldadas pela compreensão das opiniões e experiências dos próprios cientistas.
-             ''')
-    
-    st.write('''
-             Outros estudos que exploram e analisam a mesma base de dados podem ser encontrados em:
-            ''')
-    st.write('''
-            Pereira, M., Castelfranchi, Y., & Massarani, L. (2024). Científicos brasileños y divulgación científica: Una propuesta de clasificación. **Revista Iberoamericana De Ciencia, Tecnología Y Sociedad - CTS**. 
-             Retrieved from https://ojs.revistacts.net/index.php/CTS/article/view/779  \n
-            Pereira, M. **Ciência, sociedade, divulgação científica: a visão dos cientistas**. 2023. 167 p. Dissertação de Mestrado em Sociologia - Universidade Federal de Minas Gerais, 
-             Belo Horizonte, 2023. http://hdl.handle.net/1843/55328
-             ''')
-
-# Aba 5: Metodologia
-with tabs[4]:
-    st.header("Metodologia")
-
-# Aba 6: Sobre o Autor
-with tabs[5]:
-    st.header("Sobre o Autor")
-
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
-
-# # Sidebar com controles de filtro
-# st.sidebar.header("Filtros")
-
-# # Filtro de idade
-# idade_range = st.sidebar.slider("Idade:", 20, 90, (20, 90))
-# st.sidebar.write(f"Idade selecionada: {idade_range[0]} - {idade_range[1]}")
-
-# # Filtro de sexo
-# sexo_options = ["Masculino", "Feminino"]
-# sexo_selected = st.sidebar.multiselect("Sexo:", sexo_options, default=sexo_options)
-
-# # Filtro de cor/raça
-# cores = sorted(list(df.CE04.unique())[1:])
-# cor_selected = st.sidebar.multiselect("Cor/Raça:", cores, default=cores)
-
-# # Filtro de ideologia política
-# ideologias = sorted(list(df.CE07.unique())[1:])
-# ideologia_selected = st.sidebar.multiselect("Ideologia Política:", ideologias, default=ideologias)
-
-# # Filtro de produtividade
-# produtividade_options = ["1A", "1B", "1C", "1D", "2", "Senior"]
-# produtividade_selected = st.sidebar.multiselect("Produtividade:", produtividade_options, default=produtividade_options)
-
-# # Filtro de grande área do conhecimento
-# areas = sorted(list(df.CE11.unique())[1:])
-# area_selected = st.sidebar.multiselect("Grande Área do Conhecimento:", areas, default=areas)
-
-# # Filtro de região
-# regiao_options = ['Norte', 'Nordeste', 'Centro-Oeste', 'Sudeste', 'Sul']
-# regiao_selected = st.sidebar.multiselect("Região:", regiao_options, default=regiao_options)
-
-
-

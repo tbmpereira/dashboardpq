@@ -8,7 +8,6 @@ venv/
 env/
 .venv/
 logs/
-app.py
 .~lock.data_tratado.csv#
 
 # Arquivos
