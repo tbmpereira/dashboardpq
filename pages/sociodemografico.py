@@ -29,7 +29,7 @@ if variavel_selecionada:
     column_name = [key for key, value in perguntas_socio.items() if value == variavel_selecionada][0]
     plot_bar_chart(df, column_name, categorical=False, orientation="v", height=400)
 
-render_dashboard(df, varmap, codigo_variaveis, prefix='CE', key="1")
+render_dashboard(df, varmap, codigo_variaveis, codigo_variaveis, key="1")
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

@@ -25,7 +25,7 @@ with tabs[0]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são uma motivação para comunicar seu trabalho a um público não-especialista:")
     st.write("Escolha no máximo 3 respostas")
     plot_bar_chart_simplecounts(df, "MO01", varmap)
-    render_dashboard(df, varmap, prefix='MO01', ordered_categories=["Sim", "Não"], codigo_variaveis=codigo_variaveis)
+    render_dashboard(df, varmap, varset1=codigo_variaveis, varset2='MO01', ordered_categories2=["Sim", "Não"])
 
 with tabs[1]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são um obstáculo para comunicar seu trabalho a um público não-especialista:")    

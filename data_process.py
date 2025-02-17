@@ -105,15 +105,15 @@ ce14_processado = df['CE14'].apply(extrair_dois_primeiros_numeros)
 
 def classificar_vinculo(idade):
     if idade <= 5:
-        return "Ingressantes"
+        return "Até 5 anos"
     elif idade <= 10:
-        return "Jovens acadêmicos"
+        return "6 a 10 anos"
     elif idade <= 20:
-        return "Meia carreira"
+        return "11 a 20 anos"
     elif idade <= 35:
-        return "Sêniores"
+        return "21 a 35 anos"
     else:
-        return "Veteranos"
+        return "Acima de 35 anos"
     
 ce14_faixas = ce14_processado.apply(classificar_vinculo)
 

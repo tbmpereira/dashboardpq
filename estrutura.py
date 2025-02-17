@@ -101,28 +101,95 @@ def plot_bar_chart_simplecounts(df, prefix, varmap, title='', height=800):
     )
     st.plotly_chart(fig, use_container_width=True)
 
-
-def render_dashboard(df, varmap, codigo_variaveis, ordered_categories=None, prefix='odc1', key=""):
-    valor_selecionado = st.pills("Valor", list(codigo_variaveis.values()), default=None, key=f'valor_selecionado_dashboard{key}')
-    tema_selecionado = st.pills("Tema", [varmap[key] for key in varmap if key.startswith(prefix)], default=None, key=f'tema_selecionado_dashboard{key}')
+def define_categories(prefix):
+    if prefix == "CE02":
+        return ["Masculino", "Feminino"]
+    elif prefix == "CE03":
+        return ["Não frequentou escola", "Ensino Fundamental Incompleto", "Ensino Fundamental", "Ensino Médio Incompleto", "Ensino Médio", "Ensino Superior Incompleto", "Ensino Superior"]
+    elif prefix == "CE04":
+        return ["Branca", "Preta", "Amarela", "Parda", "Indígena"]
+    # elif prefix == "CE05":
+    #     return ["Cristã católica", 
+    #             "Cristã evangélica Pentecostal e Neopentecostal",
+    #             "Cristã Protestantes históricas",
+    #             "Espírita",
+    #             "Matrizes africanas",
+    #             "Religiões Orientais",
+    #             "Judaísmo",
+    #             "Islamismo",
+    #             "Tradições indígenas",
+    #             "Ateu ou agnóstico",
+    #             "Não tenho religião",
+    #             "Outros"
+    #     ]
+    elif prefix == "CE06":
+        return ["Muito importante", "Importante", "Pouco importante", "Nada importante"]
+    elif prefix == "CE07":
+        return ["De esquerda", "De centro", "Liberal", "Conservador", "De direita", "Nenhuma dessas"]
+    elif prefix == "CE08":
+        return ["Sênior", "1A", "1B", "1C", "1D", "2"]
+    elif prefix == "CE10":
+        return ["ciência aplicada", "ciência básica", "tanto ciência básica como aplicada", "não se aplica"]
+    elif prefix == "CE11":
+        return ["Ciências Exatas e da Terra", "Ciências Biológicas", "Engenharias", "Ciências da Saúde", 
+                "Ciências Agrárias", "Ciências Sociais Aplicadas", "Ciências Humanas", "Linguística, Letras e Artes"]
+    elif prefix == "CE13":
+        return ["Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"]
+    elif prefix == "CE14":
+        return ["Até 5 anos", "6 a 10 anos", "11 a 20 anos", "21 a 35 anos", "Acima de 35 anos"]
     
-    if valor_selecionado and tema_selecionado:
-        key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
-        var1 = [key for key, value in varmap.items() if value == tema_selecionado][0]
-        df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
-        
-        # Gráfico de mosaico
-        p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
-                                                var1=var1, 
-                                                var2=key,
-                                                ordered_categories=ordered_categories,
-                                                figsize=(7, 5))
-        
-        buf = BytesIO()
-        fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
-        buf.seek(0)
 
-        st.image(buf, width=1000)
+
+def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ordered_categories2=None, key="", width=1000):
+    if not isinstance(varset1, dict):
+        st.error("varset1 precisa ser um dicionário.")
+        return
+    
+    if not isinstance(varset2, (dict, str)):
+        st.error("varset2 precisa ser um dicionário ou uma string.")
+        return
+    
+    valor_selecionado = st.pills("Variável Sociodemográfica", list(varset1.values()), default="Sexo", key=f'valor_selecionado_dashboard{key}')
+    default = "Para mim, não há motivações"
+    if isinstance(varset2, dict):
+        tema_selecionado = st.pills("Motivação", list(varset2.values()), default=default, key=f'tema_selecionado_dashboard{key}')
+    else:
+        tema_selecionado = st.pills("Motivação", [varmap[key] for key in varmap if key.startswith(varset2)], default=default, key=f'tema_selecionado_dashboard{key}')
+    
+    if valor_selecionado == tema_selecionado:
+        st.error("Selecione valores diferentes para as variáveis.")
+        return
+
+    if not valor_selecionado and not tema_selecionado:
+        st.error("Selecione um valor e um tema para visualizar o dashboard.")
+    
+    elif valor_selecionado and tema_selecionado:
+        if isinstance(varset2, dict):
+            var2 = [key for key, value in varset2.items() if value == tema_selecionado][0]
+        elif isinstance(varset2, str):
+            var2 = [key for key, value in varmap.items() if value == tema_selecionado][0]
+
+        var1 = [key for key, value in varset1.items() if value == valor_selecionado][0]
+
+    if not ordered_categories1:
+        ordered_categories1 = define_categories(var1)
+
+    if ordered_categories1:
+        df[var1] = pd.Categorical(df[var1], categories=ordered_categories1, ordered=True)
+    if ordered_categories2:
+        df[var2] = pd.Categorical(df[var2], categories=ordered_categories2, ordered=True)
+
+    # Gráfico de mosaico
+    p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+                                            var1=var1, 
+                                            var2=var2,
+                                            figsize=(7, 5))
+    
+    buf = BytesIO()
+    fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
+    buf.seek(0)
+
+    st.image(buf, width=width)
 
 # Example usage
 # ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]
