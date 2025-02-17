@@ -27,39 +27,67 @@ def plot_mosaic_with_residuals(df, var1, var2, ordered_categories=None, figsize=
     Retorna:
     --------
     p : float
-    Valor de p do teste de qui-quadrado.
+        Valor de p do teste de qui-quadrado.
     fig : matplotlib.figure.Figure
-    Figura do gráfico de mosaico.
+        Figura do gráfico de mosaico.
     num_rows : int
-    Número de linhas do DataFrame usadas para calcular o mosaico.
+        Número de linhas do DataFrame usadas para calcular o mosaico.
     """
+    # Verifica se as variáveis existem no DataFrame
+    if var1 not in df.columns or var2 not in df.columns:
+        raise ValueError(f"As variáveis {var1} ou {var2} não existem no DataFrame.")
+
+    # Remove linhas com valores ausentes em var1 ou var2
+    df_clean = df.dropna(subset=[var1, var2])
+
+    # Verifica se há dados suficientes após a remoção de valores ausentes
+    if df_clean.empty:
+        raise ValueError("Não há dados suficientes após a remoção de valores ausentes.")
+
     # Reordenar a coluna var1, se necessário
     if ordered_categories is not None:
-        df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
-        df = df.sort_values(by=var1)  # Ordenar o DataFrame pela coluna var1
+        df_clean.loc[:, var1] = pd.Categorical(df_clean[var1], categories=ordered_categories, ordered=True)
+        df_clean = df_clean.sort_values(by=var1)  # Ordenar o DataFrame pela coluna var1
 
     # Criar tabela de contingência
-    contingency_table = pd.crosstab(df[var1], df[var2])
-    num_rows = contingency_table.sum().sum()  # Número total de linhas usadas para calcular o mosaico
+    contingency_table = pd.crosstab(df_clean[var1], df_clean[var2])
+
+    # Verifica se a tabela de contingência está vazia
+    if contingency_table.size == 0:
+        raise ValueError("A tabela de contingência está vazia. Verifique os dados e as variáveis selecionadas.")
+
+    # Verifica se há dados suficientes para o teste qui-quadrado
+    if contingency_table.sum().sum() < 2:
+        raise ValueError("Não há dados suficientes para realizar o teste qui-quadrado.")
 
     # Calcular o teste de qui-quadrado e obter os resíduos de Pearson
     chi2, p, dof, expected = chi2_contingency(contingency_table)
     residuals = (contingency_table - expected) / np.sqrt(expected)
 
-    # Função para mapear a cor dos blocos com base nos resíduos de Pearson (apenas se p < 0,05)
+    # Número de linhas usadas para calcular o mosaico
+    num_rows = contingency_table.sum().sum()
+
     def residual_color(key):
         if p < 0.05:  # Apenas aplica cores se houver significância estatística
-            value = residuals.loc[key[1], key[0]]  # Ajusta para o eixo correto
-            color = plt.cm.coolwarm(value)  # Mapeia o valor do residual para a cor (escala vermelho-azul)
+            try:
+                # Tenta acessar o valor no DataFrame de resíduos
+                value = residuals.loc[key[1], key[0]]
+                # Mapeia o valor do residual para a cor (escala vermelho-azul)
+                color = plt.cm.coolwarm(value)
+            except KeyError:
+                # Se a chave não existir, usa uma cor padrão (cinza)
+                color = 'lightgray'
         else:
-            color = 'lightgray'  # Cor padrão (cinza) quando não há significância
+            # Cor padrão (cinza) quando não há significância
+            color = 'lightgray'
+        
         return {'color': color}
 
     # Criar uma nova figura com tamanho personalizado
     fig, ax = plt.subplots(figsize=figsize)
 
     # Criar o gráfico de mosaico
-    mosaic(df, [var2, var1], properties=residual_color, ax=ax, gap=0.02, labelizer=lambda k: '')
+    mosaic(df_clean, [var2, var1], properties=residual_color, ax=ax, gap=0.02, labelizer=lambda k: '')
 
     # Adicionar a legenda para as cores dos resíduos de Pearson (apenas se p < 0,05)
     if p < 0.05:
@@ -88,16 +116,4 @@ def plot_mosaic_with_residuals(df, var1, var2, ordered_categories=None, figsize=
     if title:
         ax.set_title(title, fontsize=16)
 
-    # # Adicionar anotação abaixo do gráfico
-    # if p < 0.05:
-    #     annotation_text = f'Estatística de Qui-Quadrado: {chi2:.2f}\nValor de p: {p:.4f}'
-    # else:
-    #     annotation_text = f'Estatística de Qui-Quadrado: {chi2:.2f}\nValor de p: {p:.4f}\nNão há significância estatística (p ≥ 0,05)'
-
-    # ax.text(0.5, -0.20, annotation_text, transform=ax.transAxes, fontsize=12, ha='center', va='top',
-    #         bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
-    
     return p, fig, num_rows
-
-# Exemplo de uso:
-# plot_mosaic_with_residuals(df, 'adc1[SQ001]', 'CE07', ordered_categories=['Nenhuma vez', '1 vez', '2 vezes', '3 vezes', '4 vezes', '5 vezes', 'mais de 5 vezes'], title='Relação entre Atividade adc1[SQ001] e Sexo')

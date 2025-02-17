@@ -16,7 +16,7 @@ with st.sidebar:
     st.page_link("app.py", label="Página Inicial")
     st.page_link("pages/atividades.py", label="Atividades de Divulgação Científica")
     st.page_link("pages/opinioes_ct.py", label="Opiniões sobre Ciência e Tecnologia")
-    st.page_link("pages/opinioes_dc.py", label="Opiniãos sobre Divulgação Científica")
+    st.page_link("pages/opinioes_dc.py", label="Opiniões sobre Divulgação Científica")
     st.page_link("pages/motivacoes.py", label="Motivações e Obstáculos")
     st.page_link("pages/sociodemografico.py", label="Perfil Sociodemográfico")
 
@@ -47,13 +47,32 @@ with tabs[0]:
         y='Contagem', 
         color='Frequência', 
         title='Distribuição das Respostas por Atividade',
-        labels={'Contagem': 'Frequência', 'Atividade': ''},
+        labels={'Contagem': 'Frequência', 'Atividade': 'Atividade'},
         category_orders={
             'Frequência': ordered_categories,  # Ordem das categorias de frequência
             'Atividade': ordered_activities    # Ordem das atividades
         }
     )
     st.plotly_chart(fig_freq, use_container_width=True)
+
+    with st.container(border=True):
+        st.subheader("Selecione uma atividade para ver em detalhe.")
+        atividade_selecionada = st.pills("Atividade", list(codigo_atividades.values()), default=None)
+        if atividade_selecionada:
+            dff_filtrado = dff_freq[dff_freq['Atividade'] == atividade_selecionada]
+            fig_filtrado = px.bar(
+                dff_filtrado, 
+                x='Frequência', 
+                y='Contagem', 
+                title=f'Distribuição das Respostas para a atividade "{atividade_selecionada}"',
+                labels={'Contagem': '', 'Frequência': ''},
+                category_orders={
+                    'Frequência': ordered_categories  # Ordem das categorias de frequência
+                }
+            )
+            st.plotly_chart(fig_filtrado, use_container_width=True)
+
+
 
     st.write("**Legenda das respostas**")
     dicionario = {
@@ -88,11 +107,11 @@ with tabs[1]:
     # Seleção de variáveis para o mosaico
     col1, col2 = st.columns(2)
     with col1:
-        st.subheader("Tipo de atividade")
-        atividade_selected = st.radio("", list(codigo_atividades.values()))
+        #st.subheader("Tipo de atividade")
+        atividade_selected = st.pills("Tipo de atividade", list(codigo_atividades.values()), default="palestra público geral")
     with col2:
-        st.subheader("Variável sociodemográfica")
-        variavel_selected = st.radio("", list(codigo_variaveis.values()))
+        #st.subheader("Variável sociodemográfica")
+        variavel_selected = st.pills("Variável sociodemográfica", list(codigo_variaveis.values()), default="Ciencia_BasicaXAplicada")
     
     key_atividade = [key for key, value in codigo_atividades.items() if value == atividade_selected][0]
     key_variavel = [key for key, value in codigo_variaveis.items() if value == variavel_selected][0]
@@ -133,8 +152,5 @@ with tabs[2]:
 
     st.dataframe(tabela_estilizada, height=560)
 
-    # st.write('''
-    #     A tabela acima mostra o valor de p para o teste Qui-quadrado de independência entre cada atividade e variável sociodemográfica.
-    #     Quando há significância estatística (p < 0,05), a célula é destacada em amarelo. Isso indica que a atividade e a variável de interesse
-    #     estão correlacionadas.
-    # ''')
+st.markdown("---")
+st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

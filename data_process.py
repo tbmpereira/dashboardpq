@@ -70,8 +70,11 @@ def extrair_dois_primeiros_numeros(entrada):
     int or None
         Retorna os dois primeiros números consecutivos como um inteiro, 
         ou apenas o primeiro número se houver caracteres não numéricos entre eles.
-        Retorna None se não houver números.
+        Retorna None se não houver números ou se a entrada for NaN.
     """
+    if pd.isna(entrada):
+        return None
+    
     # Encontra todos os números na string
     numeros = re.findall(r'\d+', entrada)
     
@@ -176,6 +179,20 @@ codigo_variaveis = {
     'CE11': 'GdeArea_CNPq',
     'CE13': 'Regiao_Geografica',
     'CE14': 'Tempo_Vinculo'
+}
+
+perguntas_socio = {
+    'CE02': 'Qual é o seu sexo?',
+    'CE03': 'Até qual série a sua mãe estudou na escola, ou seja, qual a escolaridade dela?',
+    'CE04': 'Qual é a sua cor ou raça?',
+    'CE05': 'Você pertence a alguma religião ou grupo religioso/espiritualista?',
+    'CE06': 'Você diria que a religião, em sua vida pessoal, é...',
+    'CE10': 'A ciência que você desenvolve hoje é melhor identificada como:',
+    'CE07': 'Do ponto de vista do posicionamento político, você considera que a expressão que mais se aproxima de sua orientação é...',
+    'CE08': 'Em qual nível de Bolsa Produtividade do CNPq você se enquadra?',
+    'CE11': 'Qual é a grande área do conhecimento de sua atuação?',
+    'CE13': 'Em qual região do Brasil sua instituição se encontra?',
+    'CE14': 'Há quantos anos você está vinculado a esta universidade ou instituto de pesquisa?'
 }
 
 # Criar a tabela de valores de p

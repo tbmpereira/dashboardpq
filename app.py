@@ -11,7 +11,7 @@ with st.sidebar:
     st.page_link("app.py", label="Página Inicial")
     st.page_link("pages/atividades.py", label="Atividades de Divulgação Científica")
     st.page_link("pages/opinioes_ct.py", label="Opiniões sobre Ciência e Tecnologia")
-    st.page_link("pages/opinioes_dc.py", label="Opiniãos sobre Divulgação Científica")
+    st.page_link("pages/opinioes_dc.py", label="Opiniões sobre Divulgação Científica")
     st.page_link("pages/motivacoes.py", label="Motivações e Obstáculos")
     st.page_link("pages/sociodemografico.py", label="Perfil Sociodemográfico")
 
@@ -31,14 +31,15 @@ with tabs[0]:
     st.header("Sobre a Pesquisa")
 
     st.write('''
-             Este _survey_ online foi realizado com o objetivo de entender as percepções e opiniões dos cientistas brasileiros em relação à divulgação científica. 
-             A pesquisa focou em bolsistas de produtividade em pesquisa (PQ) do Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), uma população 
-             conhecida por sua alta atividade na produção científica.  \n
-             Para coletar as informações, foi elaborado um questionário online autoaplicado, que continha 51 perguntas organizadas em sete seções, abordando desde temas de interesse 
+             Este painel de dados apresenta para o público os resultados do _survey_ online realizado com o objetivo de entender as percepções e opiniões dos
+             cientistas brasileiros em relação à divulgação científica. A pesquisa focou em bolsistas de produtividade em pesquisa (PQ) do Conselho Nacional de 
+             Desenvolvimento Científico e Tecnológico (CNPq), uma população conhecida por sua alta atividade na produção científica.  \n
+             Para navegar entre os resultados, utilize o menu lateral à esquerda. \n
+             A coleta de informações foi feita a partir de um questionário online autoaplicado, que continha 51 perguntas organizadas em sete seções, abordando desde temas de interesse 
              e hábitos culturais até atividades de divulgação científica e opiniões sobre ciência e tecnologia na sociedade.  \n
-             Os participantes foram convidados por e-mail. Apesar das limitações inerentes a métodos quantitativos, que podem não capturar a complexidade de algumas percepções, 
-             o estudo busca oferecer _insights_ significativos sobre as dinâmicas de comunicação científica entre cientistas e o público. Esse esforço é crucial para o 
-             desenvolvimento de estratégias mais eficazes de divulgação da ciência, moldadas pela compreensão das opiniões e experiências dos próprios cientistas.
+             A coleta foi realizada entre janeiro e março de 2023, logo após o fim das medidas restritivas adotadas em função da pandemia de COVID-19. No total, foram 
+             coletadas 1934 respostas. A amostra foi estratificada, garantindo que a distribuição dos respondentes fosse proporcional à distribuição dos bolsistas PQ 
+             por área de conhecimento, sexo, região geográfica e categoria da bolsa PQ.  \n
              ''')
     
     st.write('''
@@ -60,6 +61,9 @@ with tabs[1]:
 # Aba 3: Contato
 with tabs[2]:
     st.header("Contato")
+
+    st.write(''':e-mail: [mapereira@ufmg.br](mailto:mapereira@ufmg.br)''')
+    st.write('''Acesse o perfil do pesquisador no [ResearchGate](https://www.researchgate.net/profile/Marcelo-Pereira-44)''')
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
