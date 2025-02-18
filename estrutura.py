@@ -140,7 +140,7 @@ def define_categories(prefix):
     
 
 
-def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ordered_categories2=None, key="", width=1000):
+def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ordered_categories2=None, key="", pills1 = "", pills2 = "", width=1000):
     if not isinstance(varset1, dict):
         st.error("varset1 precisa ser um dicionário.")
         return
@@ -148,13 +148,20 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
     if not isinstance(varset2, (dict, str)):
         st.error("varset2 precisa ser um dicionário ou uma string.")
         return
-    
-    valor_selecionado = st.pills("Variável Sociodemográfica", list(varset1.values()), default="Sexo", key=f'valor_selecionado_dashboard{key}')
-    default = "Para mim, não há motivações"
+        
+    default1 = list(varset1.values())[0]
+
     if isinstance(varset2, dict):
-        tema_selecionado = st.pills("Motivação", list(varset2.values()), default=default, key=f'tema_selecionado_dashboard{key}')
+        default2 = varset2.values()[0]
     else:
-        tema_selecionado = st.pills("Motivação", [varmap[key] for key in varmap if key.startswith(varset2)], default=default, key=f'tema_selecionado_dashboard{key}')
+        default2 = [value for key, value in varmap.items() if key.startswith(varset2)][0]
+
+    valor_selecionado = st.pills(pills1, list(varset1.values()), default=default1, key=f'valor_selecionado_dashboard{key}')
+    
+    if isinstance(varset2, dict):
+        tema_selecionado = st.pills(pills2, list(varset2.values()), default=default2, key=f'tema_selecionado_dashboard{key}')
+    else:
+        tema_selecionado = st.pills(pills2, [varmap[key] for key in varmap if key.startswith(varset2)], default=default2, key=f'tema_selecionado_dashboard{key}')
     
     if valor_selecionado == tema_selecionado:
         st.error("Selecione valores diferentes para as variáveis.")
