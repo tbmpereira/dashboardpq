@@ -59,6 +59,13 @@ with tabs[0]:
 
             st.image(buf, width=1000)
 
+            with st.container(border=True):
+                st.write(f"$N = {num_rows}$")
+                if p < 0.05:
+                    st.write(f"Valor de $p = {p:.4f}$")
+                else:
+                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
+
 with tabs[1]:
 #    col1, col2 = st.columns(2)
 
@@ -114,6 +121,13 @@ with tabs[1]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+
+            with st.container(border=True):
+                st.write(f"$N = {num_rows}$")
+                if p < 0.05:
+                    st.write(f"Valor de $p = {p:.4f}$")
+                else:
+                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
     
 with tabs[2]:
     st.subheader("Entre os temas a seguir, que despertaram algum grau de preocupação na opinião pública, o quanto você está preocupado, como cidadão, com...")
@@ -174,6 +188,13 @@ with tabs[2]:
 
             st.image(buf, width=1000)
 
+            with st.container(border=True):
+                st.write(f"$N = {num_rows}$")
+                if p < 0.05:
+                    st.write(f"Valor de $p = {p:.4f}$")
+                else:
+                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
+
 with tabs[3]:
     st.subheader("Na sua opinião, a regulação e gestão da ciência e da tecnologia deveriam ter a participação de...")
 
@@ -193,7 +214,7 @@ with tabs[3]:
                  facet_col='Variável', 
                  facet_col_wrap=2, 
                  title='',
-                 height=600)
+                 height=750)
     fig.for_each_annotation(lambda a: a.update(text=f"<b>{varmap[a.text.split('=')[1]]}</b>"))  # Título em negrito
 
     # Remover títulos dos eixos x e y em todos os facets
@@ -208,6 +229,7 @@ with tabs[3]:
                       yaxis_title='',
                       plot_bgcolor='rgba(0,0,0,0)',
                       paper_bgcolor='rgba(0,0,0,0)',
+    #                  facet_row_spacing=0.05
     )
     st.plotly_chart(fig, use_container_width=True, key='gestao')
 
@@ -232,6 +254,13 @@ with tabs[3]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+
+            with st.container(border=True):
+                st.write(f"$N = {num_rows}$")
+                if p < 0.05:
+                    st.write(f"Valor de $p = {p:.4f}$")
+                else:
+                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
     st.subheader("Marque por favor sua concordância ou discordância com estas afirmações sobre ciência e tecnologia.")
 
@@ -293,6 +322,13 @@ with tabs[3]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+
+            with st.container(border=True):
+                st.write(f"$N = {num_rows}$")
+                if p < 0.05:
+                    st.write(f"Valor de $p = {p:.4f}$")
+                else:
+                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

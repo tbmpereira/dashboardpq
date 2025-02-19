@@ -24,22 +24,42 @@ tabs = st.tabs(["Motivações", "Obstáculos", "Formação e Eventos"])
 with tabs[0]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são uma motivação para comunicar seu trabalho a um público não-especialista:")
     st.write("Escolha no máximo 3 respostas")
-    plot_bar_chart_simplecounts(df, "MO01", varmap)
-    render_dashboard(df, varmap, varset1=codigo_variaveis, varset2='MO01', ordered_categories2=["Sim", "Não"])
+    plot_bar_chart_simplecounts(df, "MO01[SQ", varmap)
+    render_dashboard(df, 
+                     varmap, 
+                     varset1=codigo_variaveis, 
+                     varset2='MO01[SQ', 
+                     ordered_categories2=["Sim", "Não"],
+                     key="MO1",
+                     pills1="Variável Sociodemográfica",
+                     pills2="Motivação")
 
 with tabs[1]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são um obstáculo para comunicar seu trabalho a um público não-especialista:")    
     st.write("Escolha no máximo 3 respostas")
     plot_bar_chart_simplecounts(df, "MO02", varmap)
-    render_dashboard(df, varmap, prefix='MO02', ordered_categories=["Sim", "Não"], codigo_variaveis=codigo_variaveis, key="2")
+    render_dashboard(df, 
+                     varmap, 
+                     varset1=codigo_variaveis, 
+                     varset2='MO02', 
+                     ordered_categories2=["Sim", "Não"], 
+                     key="MO2",
+                     pills1="Variável Sociodemográfica",
+                     pills2="Obstáculo")
 
 with tabs[2]:
     st.subheader("Você conhece ou participou de alguma destas iniciativas de formação em divulgação científica?")
     ordered_categories = ["Não conheço", "Conheço mas não participei", "Participei como aluno", "Participei como docente"]
     plot_bar_chart_facets(df, varmap, "MO04", ordered_categories=ordered_categories)
-    render_dashboard(df, varmap, prefix='MO04', ordered_categories=ordered_categories, codigo_variaveis=codigo_variaveis, key="4")
-
-
+    ordered_categories2 = ["Conheço mas não participei", "Participei como aluno", "Participei como docente", "Não conheço"]
+    render_dashboard(df, 
+                     varmap, 
+                     varset1=codigo_variaveis,
+                     varset2='MO04',
+                     ordered_categories2=ordered_categories2,
+                     key="MO4",
+                     pills1="Variável Sociodemográfica",
+                     pills2="Formação")
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

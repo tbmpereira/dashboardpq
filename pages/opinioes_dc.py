@@ -38,6 +38,8 @@ with tabs[0]:
                          varset2="odc1[SQ", 
                          ordered_categories2=["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1],
                          key="1",
+                         pills1="Variável Sociodemográfica",
+                         pills2="Opinião",
                          width=1000)
 
 with tabs[1]:
@@ -56,7 +58,7 @@ with tabs[1]:
     # Gráfico de mosaico
     with st.container(border=True):
         st.subheader("Selecione uma variável sociodemográfica.")
-        valor_selecionado = st.pills("Valor", list(codigo_variaveis.values()), default=None)
+        valor_selecionado = st.pills("Variável Sociodemográfica", list(codigo_variaveis.values()), default=None)
         if valor_selecionado:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
             ordered_categories = ["Muito importante", "Importante", "Pouco importante", "Nada importante", "Não sei"][::-1]
@@ -111,8 +113,8 @@ with tabs[2]:
 
     # Gráfico de mosaico
     with st.container(border=True):
-        valor_selecionado = st.pills("Valor", list(codigo_variaveis.values()), default=None, key='valor_selecionado2')
-        tema_selecionado = st.pills("Tema", [varmap[key] for key in varmap if key.startswith("odc3[SQ")], default=None, key='publico_selecionado')
+        valor_selecionado = st.pills("Variável Sociodemográfica", list(codigo_variaveis.values()), default=None, key='valor_selecionado2')
+        tema_selecionado = st.pills("Tipo de público", [varmap[key] for key in varmap if key.startswith("odc3[SQ")], default=None, key='publico_selecionado')
         if valor_selecionado and tema_selecionado:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
             var1 = [key for key, value in varmap.items() if value == tema_selecionado][0]

@@ -152,7 +152,7 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
     default1 = list(varset1.values())[0]
 
     if isinstance(varset2, dict):
-        default2 = varset2.values()[0]
+        default2 = list(varset2.values())[0]
     else:
         default2 = [value for key, value in varmap.items() if key.startswith(varset2)][0]
 
@@ -197,6 +197,13 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
     buf.seek(0)
 
     st.image(buf, width=width)
+
+    with st.container(border=True):
+        st.write(f"$N = {num_rows}$")
+        if p < 0.05:
+            st.write(f"Valor de $p = {p:.4f}$")
+        else:
+            st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
 # Example usage
 # ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]
