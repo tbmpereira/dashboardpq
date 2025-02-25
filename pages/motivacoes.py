@@ -28,8 +28,7 @@ with tabs[0]:
     render_dashboard(df, 
                      varmap, 
                      varset1=codigo_variaveis, 
-                     varset2='MO01[SQ', 
-                     ordered_categories2=["Sim", "Não"],
+                     varset2='MO01[SQ',
                      key="MO1",
                      pills1="Variável Sociodemográfica",
                      pills2="Motivação")

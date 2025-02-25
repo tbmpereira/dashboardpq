@@ -10,6 +10,10 @@ df = pd.read_csv("data_tratado.csv")
 with open("varmap.pkl", "rb") as f:
     varmap = pickle.load(f)
 
+# Carregar as categorias ordenadas
+with open("categories.pkl", "rb") as f:
+    categories = pickle.load(f)
+
 # Aplicar a transformação de categorias ordenadas a todas as colunas que começam com 'adc1'
 
 ordered_categories = ['Nenhuma vez', '1 vez', '2 vezes', '3 vezes', '4 vezes', '5 vezes', 'mais de 5 vezes']
@@ -114,7 +118,7 @@ def classificar_vinculo(idade):
         return "21 a 35 anos"
     else:
         return "Acima de 35 anos"
-    
+        
 ce14_faixas = ce14_processado.apply(classificar_vinculo)
 
 df['CE14'] = ce14_faixas

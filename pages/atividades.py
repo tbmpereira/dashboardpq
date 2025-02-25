@@ -119,25 +119,18 @@ with tabs[1]:
     key_variavel = [key for key, value in codigo_variaveis.items() if value == variavel_selected][0]
     
     # Gráfico de mosaico
-    p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
-                                            var1=key_atividade, 
-                                            var2=key_variavel, 
-                                            ordered_categories=ordered_categories,
-                                            #title=f"Mosaico da relação entre {atividade_selected} e {variavel_selected}",
-                                            figsize=(7, 5))
+    fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+                                            var1=key_variavel, 
+                                            var2=key_atividade,
+                                            ylabel = atividade_selected,
+                                            xlabel = variavel_selected,
+                                            figsize=(12, 10))
     
     buf = BytesIO()
     fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
     buf.seek(0)
 
     st.image(buf, width=1000)
-
-    with st.container(border=True):
-        st.write(f"$N = {num_rows}$")
-        if p < 0.05:
-            st.write(f"Valor de $p = {p:.4f}$")
-        else:
-            st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
     
     st.subheader("O que é um gráfico de mosaico?")
     st.write('''

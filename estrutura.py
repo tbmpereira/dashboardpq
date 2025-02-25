@@ -187,23 +187,16 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
         df[var2] = pd.Categorical(df[var2], categories=ordered_categories2, ordered=True)
 
     # Gráfico de mosaico
-    p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+    fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                             var1=var1, 
                                             var2=var2,
-                                            figsize=(7, 5))
+                                            figsize=(12, 10))
     
     buf = BytesIO()
     fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
     buf.seek(0)
 
     st.image(buf, width=width)
-
-    with st.container(border=True):
-        st.write(f"$N = {num_rows}$")
-        if p < 0.05:
-            st.write(f"Valor de $p = {p:.4f}$")
-        else:
-            st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
 # Example usage
 # ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]

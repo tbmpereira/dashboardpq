@@ -40,18 +40,18 @@ with tabs[0]:
     # Gráfico de mosaico
     with st.container(border=True):
         st.subheader("Selecione uma variável sociodemográfica.")
-        valor_selecionado = st.pills("Valor", list(codigo_variaveis.values()), default=None)
+        valor_selecionado = st.pills("Variável Sociodemográfica", list(codigo_variaveis.values()), default=None)
         if valor_selecionado:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
             ordered_categories = ["Atrasado", "Intermediário", "Avançado"]
             df.octs1 = pd.Categorical(df.octs1, categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1="octs1", 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                # title=f"Visão da ciência brasileira entre os respondentes segundo {valor_selecionado}",
-                                                    figsize=(7, 5))
+                                                    xlabel=valor_selecionado,
+                                                    ylabel="Visão da Ciência Brasileira",
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
             fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
@@ -59,16 +59,7 @@ with tabs[0]:
 
             st.image(buf, width=1000)
 
-            with st.container(border=True):
-                st.write(f"$N = {num_rows}$")
-                if p < 0.05:
-                    st.write(f"Valor de $p = {p:.4f}$")
-                else:
-                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
-
 with tabs[1]:
-#    col1, col2 = st.columns(2)
-
 #    with col1:
     st.subheader('''Vamos agora falar sobre os riscos e os benefícios da pesquisa científica. Em sua opinião, a ciência traz para a humanidade...''')
     # Gráfico de barras
@@ -110,24 +101,18 @@ with tabs[1]:
                 df.octs3 = pd.Categorical(df.octs3, categories=ordered_categories, ordered=True)
             
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
-                                                    var1=var1, 
-                                                    var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                    figsize=(7, 5))
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+                                                    var1=key, 
+                                                    var2=var1,
+                                                    xlabel=variavel_selecionado,
+                                                    ylabel=riscos_beneficios,
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
             fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
             buf.seek(0)
 
             st.image(buf, width=1000)
-
-            with st.container(border=True):
-                st.write(f"$N = {num_rows}$")
-                if p < 0.05:
-                    st.write(f"Valor de $p = {p:.4f}$")
-                else:
-                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
     
 with tabs[2]:
     st.subheader("Entre os temas a seguir, que despertaram algum grau de preocupação na opinião pública, o quanto você está preocupado, como cidadão, com...")
@@ -168,7 +153,7 @@ with tabs[2]:
 
     # Gráfico de mosaico
     with st.container(border=True):
-        valor_selecionado = st.pills("Valor", list(codigo_variaveis.values()), default=None, key='valor_selecionado')
+        valor_selecionado = st.pills("Variável Sociodemográfica", list(codigo_variaveis.values()), default=None, key='valor_selecionado')
         tema_selecionado = st.pills("Tema", [varmap[key] for key in varmap if key.startswith("octs6[SQ")], default=None, key='tema_selecionado')
         if valor_selecionado and tema_selecionado:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
@@ -176,24 +161,18 @@ with tabs[2]:
             ordered_categories = ["Extremamente preocupado", "Muito preocupado", "Preocupado", "Nada preocupado", "Não sei"][::-1]
             df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                    figsize=(7, 5))
+                                                    xlabel=tema_selecionado,
+                                                    ylabel=valor_selecionado,
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
             fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
             buf.seek(0)
 
             st.image(buf, width=1000)
-
-            with st.container(border=True):
-                st.write(f"$N = {num_rows}$")
-                if p < 0.05:
-                    st.write(f"Valor de $p = {p:.4f}$")
-                else:
-                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
 with tabs[3]:
     st.subheader("Na sua opinião, a regulação e gestão da ciência e da tecnologia deveriam ter a participação de...")
@@ -311,24 +290,16 @@ with tabs[3]:
             ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]
             df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                    figsize=(7, 5))
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
             fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
             buf.seek(0)
 
             st.image(buf, width=1000)
-
-            with st.container(border=True):
-                st.write(f"$N = {num_rows}$")
-                if p < 0.05:
-                    st.write(f"Valor de $p = {p:.4f}$")
-                else:
-                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

@@ -29,15 +29,12 @@ tabs = st.tabs(["Modelos", "Importância", "Públicos"])
 with tabs[0]:
     st.subheader("As afirmações que seguem contêm várias posições que podem ter consequências para a comunicação entre a ciência e o público. Qual a sua opinião sobre cada afirmação?")
     plot_bar_chart_facets(df, varmap, prefix='odc1', ordered_categories=None, title='', height=800)
-
-    # Gráfico de mosaico
     with st.container(border=True):
         render_dashboard(df, 
                          varmap, 
                          varset1=codigo_variaveis, 
-                         varset2="odc1[SQ", 
-                         ordered_categories2=["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1],
-                         key="1",
+                         varset2="odc1[SQ",
+                         key="2",
                          pills1="Variável Sociodemográfica",
                          pills2="Opinião",
                          width=1000)
@@ -64,12 +61,10 @@ with tabs[1]:
             ordered_categories = ["Muito importante", "Importante", "Pouco importante", "Nada importante", "Não sei"][::-1]
             df.odc2 = pd.Categorical(df.odc2, categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1="odc2", 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                    # title=f"Visão da ciência brasileira entre os respondentes segundo {valor_selecionado}",
-                                                    figsize=(7, 5))
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
             fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
@@ -121,17 +116,18 @@ with tabs[2]:
             ordered_categories = ["Muito importante", "Importante", "Um pouco importante", "Nada importante", "Não sei"][::-1]
             df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
-                                                    figsize=(7, 5))
+                                                    figsize=(12, 10))
             
             buf = BytesIO()
-            fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=100)
+            fig_mosaic.set_size_inches(12, 10)
+            fig_mosaic.savefig(buf, format="png", bbox_inches="tight", dpi=200)
+            fig_mosaic.tight_layout()
             buf.seek(0)
 
-            st.image(buf, width=1000)
+            st.image(buf, width=1000, use_container_width=False)
 
 
 
