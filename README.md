@@ -11,6 +11,7 @@ Este repositório contém um aplicativo interativo desenvolvido em **Streamlit**
 ### Para saber mais:
 
 Pereira, M., Castelfranchi, Y., & Massarani, L. (2024). Científicos brasileños y divulgación científica: Una propuesta de clasificación. **Revista Iberoamericana De Ciencia, Tecnología Y Sociedad - CTS**. Retrieved from https://ojs.revistacts.net/index.php/CTS/article/view/779
+
 Pereira, M. **Ciência, sociedade, divulgação científica: a visão dos cientistas**. 2023. 167 p. Dissertação de Mestrado em Sociologia - Universidade Federal de Minas Gerais, Belo Horizonte, 2023. http://hdl.handle.net/1843/55328
 
 ---
