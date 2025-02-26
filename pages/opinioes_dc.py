@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
 from data_process import df, codigo_variaveis, varmap
-from estrutura import plot_bar_chart_facets, render_dashboard
+from estrutura import plot_bar_chart_facets, render_dashboard, explicacao_mosaico
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
 import pandas as pd
@@ -38,6 +38,8 @@ with tabs[0]:
                          pills1="Variável Sociodemográfica",
                          pills2="Opinião",
                          width=1000)
+        explicacao_mosaico()
+        
 
 with tabs[1]:
     st.subheader("Considerando todas as atividades do seu trabalho, que importância você atribui à comunicação com o público não-especialista?")
@@ -71,6 +73,7 @@ with tabs[1]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+            explicacao_mosaico()
 
 with tabs[2]:
     st.subheader("Considerando o seu trabalho atual, qual importância você atribui à comunicação com os seguintes públicos não especialistas:")
@@ -128,6 +131,7 @@ with tabs[2]:
             buf.seek(0)
 
             st.image(buf, width=1000, use_container_width=False)
+            explicacao_mosaico()
 
 
 

@@ -3,6 +3,7 @@ import streamlit as st
 import plotly.express as px
 from io import BytesIO
 from graphs import plot_mosaic_with_residuals
+from data_process import categories
 
 def plot_bar_chart_facets(df, varmap, prefix='odc1', ordered_categories=None, title='', height=800):
     if ordered_categories is None:
@@ -100,55 +101,11 @@ def plot_bar_chart_simplecounts(df, prefix, varmap, title='', height=800):
                       paper_bgcolor='rgba(0,0,0,0)',
     )
     st.plotly_chart(fig, use_container_width=True)
-
-def define_categories(prefix):
-    if prefix == "CE02":
-        return ["Masculino", "Feminino"]
-    elif prefix == "CE03":
-        return ["Não frequentou escola", "Ensino Fundamental Incompleto", "Ensino Fundamental", "Ensino Médio Incompleto", "Ensino Médio", "Ensino Superior Incompleto", "Ensino Superior"]
-    elif prefix == "CE04":
-        return ["Branca", "Preta", "Amarela", "Parda", "Indígena"]
-    # elif prefix == "CE05":
-    #     return ["Cristã católica", 
-    #             "Cristã evangélica Pentecostal e Neopentecostal",
-    #             "Cristã Protestantes históricas",
-    #             "Espírita",
-    #             "Matrizes africanas",
-    #             "Religiões Orientais",
-    #             "Judaísmo",
-    #             "Islamismo",
-    #             "Tradições indígenas",
-    #             "Ateu ou agnóstico",
-    #             "Não tenho religião",
-    #             "Outros"
-    #     ]
-    elif prefix == "CE06":
-        return ["Muito importante", "Importante", "Pouco importante", "Nada importante"]
-    elif prefix == "CE07":
-        return ["De esquerda", "De centro", "Liberal", "Conservador", "De direita", "Nenhuma dessas"]
-    elif prefix == "CE08":
-        return ["Sênior", "1A", "1B", "1C", "1D", "2"]
-    elif prefix == "CE10":
-        return ["ciência aplicada", "ciência básica", "tanto ciência básica como aplicada", "não se aplica"]
-    elif prefix == "CE11":
-        return ["Ciências Exatas e da Terra", "Ciências Biológicas", "Engenharias", "Ciências da Saúde", 
-                "Ciências Agrárias", "Ciências Sociais Aplicadas", "Ciências Humanas", "Linguística, Letras e Artes"]
-    elif prefix == "CE13":
-        return ["Norte", "Nordeste", "Sudeste", "Sul", "Centro-Oeste"]
-    elif prefix == "CE14":
-        return ["Até 5 anos", "6 a 10 anos", "11 a 20 anos", "21 a 35 anos", "Acima de 35 anos"]
     
 
 
-def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ordered_categories2=None, key="", pills1 = "", pills2 = "", width=1000):
-    if not isinstance(varset1, dict):
-        st.error("varset1 precisa ser um dicionário.")
-        return
-    
-    if not isinstance(varset2, (dict, str)):
-        st.error("varset2 precisa ser um dicionário ou uma string.")
-        return
-        
+def render_dashboard(df, varmap, varset1, varset2, key="", pills1 = "", pills2 = "", width=1000):
+
     default1 = list(varset1.values())[0]
 
     if isinstance(varset2, dict):
@@ -178,13 +135,16 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
 
         var1 = [key for key, value in varset1.items() if value == valor_selecionado][0]
 
-    if not ordered_categories1:
-        ordered_categories1 = define_categories(var1)
-
-    if ordered_categories1:
-        df[var1] = pd.Categorical(df[var1], categories=ordered_categories1, ordered=True)
-    if ordered_categories2:
-        df[var2] = pd.Categorical(df[var2], categories=ordered_categories2, ordered=True)
+    if var1.startswith("MO01") or var1.startswith("MO02"):
+        ordered_categories = ["Sim", "Não"]
+        df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
+    elif var2.startswith("MO01") or var2.startswith("MO02"):
+        ordered_categories = ["Sim", "Não"]
+        df[var2] = pd.Categorical(df[var2], categories=ordered_categories, ordered=True)
+    else:
+        # ordenar as categorias
+        df[var1] = pd.Categorical(df[var1], categories=categories[var1], ordered=True)
+        df[var2] = pd.Categorical(df[var2], categories=categories[var2], ordered=True)
 
     # Gráfico de mosaico
     fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
@@ -201,3 +161,44 @@ def render_dashboard(df, varmap, varset1, varset2, ordered_categories1=None, ord
 # Example usage
 # ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]
 # render_dashboard(df, varmap, codigo_variaveis, ordered_categories, prefix='odc1')
+
+def explicacao_mosaico():
+    with st.expander("O que é um gráfico de mosaico?"):
+            st.markdown('''
+            ### O que é um Gráfico de Mosaico?
+            Um **gráfico de mosaico** é uma ferramenta visual usada para representar a relação entre duas variáveis categóricas.
+            Ela divide um retângulo em subáreas proporcionais às frequências das categorias das variáveis. Cada "bloco" do mosaico representa uma 
+            combinação de categorias, e o tamanho do bloco é proporcional à frequência daquela combinação.  \n
+            #### O que são Resíduos de Pearson?
+            Os **resíduos de Pearson** são uma medida estatística que ajuda a entender a diferença entre os valores observados e os valores esperados
+            em uma tabela de contingência (uma tabela que cruza duas ou mais variáveis categóricas). Eles são calculados da seguinte forma:
+            ''')
+            st.latex(r'''
+                    \text{Resíduo de Pearson} = \frac{(\text{Observado} - \text{Esperado})}{\sqrt{\text{Esperado}}}
+                    ''')
+                                                                        
+            st.markdown('''
+                    Onde:
+                    - **Observado**: o valor real encontrado nos dados.  \n
+                    - **Esperado**: o valor esperado se não houvesse associação entre as variáveis (isto é, se fossem independentes).  \n
+                    Os resíduos de Pearson indicam se uma combinação de categorias ocorre com mais frequência do que o esperado (resíduo positivo) ou menos
+                    frequência do que o esperado (resíduo negativo).  \n
+                    ### Gráfico de Mosaico com Resíduos de Pearson
+                    Quando um gráfico de mosaico é colorido com base nos resíduos de Pearson, ele destaca as combinações de categorias que ocorrem com mais
+                    ou menos frequência do que o esperado.  \n
+                    #### Como funciona?
+                    - **Cor Vermelha**: combinações de categorias que ocorrem com mais frequência do que o esperado. (resíduo positivo) \n
+                    - **Cor Azul**: combinações de categorias que ocorrem com menos frequência do que o esperado. (resíduo negativo) \n
+                    - **Cor Cinza**: combinações de categorias que ocorrem com a frequência esperada.  \n
+                    #### Exemplo:
+        ''')
+            st.image("img/exemplo_mosaico.png", width=1000)
+            st.markdown('''
+                    Neste exemplo, o gráfico de mosaico mostra a relação entre a frequência da atividade "palestras para o público geral" e se o científica
+                    atua principalmente com ciência básica ou aplicada. \n
+                    Assim, podemos perceber, por exemplo, que os cientistas que atuam principalmente com ciência aplicada dão mais palestras do que o esperado,
+                    e isto pode ser percebido pelas cores vermelhas das frequências maiores e pelas cores azuis das frequências menores.
+                    O contrário acontece com os cientistas que atuam principalmente com ciência básica.  \n
+                    A barra de cores ao lado do gráfico mostra a escala de resíduos de Pearson.  Com o valor de _p_ do teste _chi-quadrado_ exibido logo abaixo\n
+                    Valores de _p_ menores que 0.05 indicam que a associação entre as variáveis é estatisticamente significativa.  \n
+            ''')

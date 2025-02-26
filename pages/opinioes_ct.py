@@ -1,9 +1,10 @@
 import streamlit as st
 import plotly.express as px
-from data_process import df, codigo_variaveis, varmap
+from data_process import df, codigo_variaveis, varmap, categories
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
 import pandas as pd
+from estrutura import explicacao_mosaico
 
 # Configuração inicial do Streamlit
 st.set_page_config(
@@ -59,6 +60,8 @@ with tabs[0]:
 
             st.image(buf, width=1000)
 
+            explicacao_mosaico()
+
 with tabs[1]:
 #    with col1:
     st.subheader('''Vamos agora falar sobre os riscos e os benefícios da pesquisa científica. Em sua opinião, a ciência traz para a humanidade...''')
@@ -113,6 +116,8 @@ with tabs[1]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+
+            explicacao_mosaico()
     
 with tabs[2]:
     st.subheader("Entre os temas a seguir, que despertaram algum grau de preocupação na opinião pública, o quanto você está preocupado, como cidadão, com...")
@@ -174,6 +179,8 @@ with tabs[2]:
 
             st.image(buf, width=1000)
 
+            explicacao_mosaico()
+
 with tabs[3]:
     st.subheader("Na sua opinião, a regulação e gestão da ciência e da tecnologia deveriam ter a participação de...")
 
@@ -222,10 +229,9 @@ with tabs[3]:
             ordered_categories = ["Concordo totalmente", "Concordo em partes", "Discordo em partes", "Discordo totalmente", "Não sei"]
             df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
             # Gráfico de mosaico
-            p, fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
+            fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
-                                                    ordered_categories=ordered_categories,
                                                     figsize=(7, 5))
             
             buf = BytesIO()
@@ -234,12 +240,7 @@ with tabs[3]:
 
             st.image(buf, width=1000)
 
-            with st.container(border=True):
-                st.write(f"$N = {num_rows}$")
-                if p < 0.05:
-                    st.write(f"Valor de $p = {p:.4f}$")
-                else:
-                    st.write(f"Valor de $p = {p:.4f}$.  \nNão há significância estatística para o relacionamente entre as variáveis.")
+            explicacao_mosaico()
 
     st.subheader("Marque por favor sua concordância ou discordância com estas afirmações sobre ciência e tecnologia.")
 
@@ -288,7 +289,7 @@ with tabs[3]:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
             var1 = [key for key, value in varmap.items() if value == resposta_selecionada][0]
             ordered_categories = ["Concordo totalmente", "Concordo em parte", "Discordo em parte", "Discordo totalmente", "Não sei"][::-1]
-            df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
+            df[var1] = pd.Categorical(df[var1], categories=categories[var1], ordered=True)
             # Gráfico de mosaico
             fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
@@ -300,6 +301,8 @@ with tabs[3]:
             buf.seek(0)
 
             st.image(buf, width=1000)
+
+            explicacao_mosaico()
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

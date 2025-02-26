@@ -1,10 +1,10 @@
 import streamlit as st
 import pickle
-from data_process import varmap, codigo_variaveis, df, ordered_categories, ordered_activities, dff_freq, codigo_atividades, tabela_estilizada
+from data_process import varmap, codigo_variaveis, df, ordered_categories, ordered_activities, dff_freq, codigo_atividades
 import plotly.express as px
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
-from estrutura import plot_bar_chart_facets, plot_bar_chart, render_dashboard, define_categories
+from estrutura import plot_bar_chart_facets, plot_bar_chart, explicacao_mosaico
 import pandas as pd
 
 # Configuração inicial do Streamlit
@@ -131,15 +131,8 @@ with tabs[1]:
     buf.seek(0)
 
     st.image(buf, width=1000)
-    
-    st.subheader("O que é um gráfico de mosaico?")
-    st.write('''
-        O gráfico de mosaico é uma forma de visualização de dados categóricos que exibe a relação entre duas variáveis.
-        A altura de cada bloco é proporcional à frequência da atividade, enquanto a largura é proporcional à cada categoria 
-        da variável sociodemográfica. Se a cor do bloco for diferente de cinza, isso indica que a correlação de Pearson entre a 
-        atividade e a variável é significativa (p < 0,05). Assim, quanto mais vermelha significa que esta frequência é maior do que
-        o esperado para aquela categoria, enquanto que azul significa que a frequência é menor do que o esperado.
-        ''')
+
+    explicacao_mosaico()
     
 # Aba 3: Relação com profissionais de divulgação científica
 with tabs[2]:

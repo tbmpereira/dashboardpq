@@ -44,7 +44,7 @@ def plot_mosaic_with_residuals(df, var1, var2, figsize=(14, 12), title=None, xla
     # Verifica se as variáveis existem no DataFrame
     if var1 not in df.columns or var2 not in df.columns:
         raise ValueError(f"As variáveis {var1} ou {var2} não existem no DataFrame.")
-
+    
     # Remove linhas com valores ausentes em var1 ou var2
     df_clean = df.dropna(subset=[var1, var2])
 
@@ -52,11 +52,16 @@ def plot_mosaic_with_residuals(df, var1, var2, figsize=(14, 12), title=None, xla
     if df_clean.empty:
         raise ValueError("Não há dados suficientes após a remoção de valores ausentes.")
 
-    # Reordenar var1 e var2 de acordo com as categorias definidas
-    if var1 in categories:
-        df_clean[var1] = pd.Categorical(df_clean.loc[:, var1], categories=categories[var1], ordered=True)
-    if var2 in categories:
-        df_clean[var2] = pd.Categorical(df_clean.loc[:, var2], categories=categories[var2], ordered=True)
+    if var1.startswith("MO01") or var1.startswith("MO02"):
+        ordered_categories = ["Sim", "Não"]
+        df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
+    elif var2.startswith("MO01") or var2.startswith("MO02"):
+        ordered_categories = ["Sim", "Não"]
+        df[var2] = pd.Categorical(df[var2], categories=ordered_categories, ordered=True)
+    else:
+        # ordenar as categorias
+        df[var1] = pd.Categorical(df[var1], categories=categories[var1], ordered=True)
+        df[var2] = pd.Categorical(df[var2], categories=categories[var2], ordered=True)
 
     # Criar tabela de contingência
     contingency_table = pd.crosstab(df_clean[var1], df_clean[var2])

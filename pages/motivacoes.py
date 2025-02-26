@@ -1,5 +1,5 @@
 import streamlit as st
-from estrutura import plot_bar_chart_facets, plot_bar_chart_simplecounts, render_dashboard
+from estrutura import plot_bar_chart_facets, plot_bar_chart_simplecounts, render_dashboard, explicacao_mosaico
 from data_process import df, varmap, codigo_variaveis
 
 # Configuração inicial do Streamlit
@@ -24,14 +24,15 @@ tabs = st.tabs(["Motivações", "Obstáculos", "Formação e Eventos"])
 with tabs[0]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são uma motivação para comunicar seu trabalho a um público não-especialista:")
     st.write("Escolha no máximo 3 respostas")
-    plot_bar_chart_simplecounts(df, "MO01[SQ", varmap)
+    plot_bar_chart_simplecounts(df, "MO01", varmap)
     render_dashboard(df, 
                      varmap, 
                      varset1=codigo_variaveis, 
-                     varset2='MO01[SQ',
+                     varset2='MO01',
                      key="MO1",
                      pills1="Variável Sociodemográfica",
                      pills2="Motivação")
+    explicacao_mosaico()
 
 with tabs[1]:
     st.subheader("Marque os elementos mais importantes que, para você pessoalmente, são um obstáculo para comunicar seu trabalho a um público não-especialista:")    
@@ -41,10 +42,10 @@ with tabs[1]:
                      varmap, 
                      varset1=codigo_variaveis, 
                      varset2='MO02', 
-                     ordered_categories2=["Sim", "Não"], 
                      key="MO2",
                      pills1="Variável Sociodemográfica",
                      pills2="Obstáculo")
+    explicacao_mosaico()
 
 with tabs[2]:
     st.subheader("Você conhece ou participou de alguma destas iniciativas de formação em divulgação científica?")
@@ -55,10 +56,10 @@ with tabs[2]:
                      varmap, 
                      varset1=codigo_variaveis,
                      varset2='MO04',
-                     ordered_categories2=ordered_categories2,
                      key="MO4",
                      pills1="Variável Sociodemográfica",
                      pills2="Formação")
+    explicacao_mosaico()
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")

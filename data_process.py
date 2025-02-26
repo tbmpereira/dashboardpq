@@ -6,6 +6,8 @@ from scipy.stats import chi2_contingency
 # Carregar os dados
 df = pd.read_csv("data_tratado.csv")
 
+df["CE05"] = df["CE05"].str.strip()
+
 # Carregar o mapeamento de variáveis
 with open("varmap.pkl", "rb") as f:
     varmap = pickle.load(f)

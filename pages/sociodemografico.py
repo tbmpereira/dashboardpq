@@ -1,6 +1,6 @@
 import streamlit as st
 from data_process import df, perguntas_socio, codigo_variaveis, varmap
-from estrutura import plot_bar_chart, render_dashboard
+from estrutura import plot_bar_chart, render_dashboard, explicacao_mosaico
 
 # Configuração inicial do Streamlit
 st.set_page_config(
@@ -36,6 +36,7 @@ render_dashboard(df,
                  key="1",
                  pills1="Primeira Variável",
                  pills2="Segunda Variável")
+explicacao_mosaico()
 
 st.markdown("---")
 st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
