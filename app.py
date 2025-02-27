@@ -64,8 +64,8 @@ with tabs[0]:
     
     with col2:
         image = Image.open("img/rosetta.png")
-        image_cropped = image.crop((0, 0, 400, 400))
-        st.image(image_cropped, use_container_width=True)
+        # image_cropped = image.crop((0, 0, 400, 400))
+        st.image(image, use_container_width=True)
 
 # Aba 2: Questionário
 with tabs[1]:
