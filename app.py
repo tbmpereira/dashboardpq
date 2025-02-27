@@ -1,5 +1,6 @@
 import streamlit as st
 from PIL import Image
+from estrutura import rodape
 
 # Configuração inicial do Streamlit
 st.set_page_config(
@@ -147,7 +148,6 @@ with tabs[3]:
     st.write(''':e-mail: [mapereira@ufmg.br](mailto:mapereira@ufmg.br)''')
     st.write('''Acesse o perfil do pesquisador no [ResearchGate](https://www.researchgate.net/profile/Marcelo-Pereira-44)''')
 
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+rodape()
 
 

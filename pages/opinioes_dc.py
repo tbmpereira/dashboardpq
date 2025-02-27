@@ -1,7 +1,7 @@
 import streamlit as st
 import plotly.express as px
-from data_process import df, codigo_variaveis, varmap
-from estrutura import plot_bar_chart_facets, render_dashboard, explicacao_mosaico
+from data_process import df, codigo_variaveis, varmap, categories
+from estrutura import plot_bar_chart_facets, render_dashboard, explicacao_mosaico, rodape
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
 import pandas as pd
@@ -62,10 +62,13 @@ with tabs[1]:
             key = [key for key, value in codigo_variaveis.items() if value == valor_selecionado][0]
             ordered_categories = ["Muito importante", "Importante", "Pouco importante", "Nada importante", "Não sei"][::-1]
             df.odc2 = pd.Categorical(df.odc2, categories=ordered_categories, ordered=True)
+            df[key] = pd.Categorical(df[key], categories=categories[key], ordered=True)
             # Gráfico de mosaico
             fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
-                                                    var1="odc2", 
-                                                    var2=key,
+                                                    var2="odc2", 
+                                                    var1=key,
+                                                    ylabel="Importância da divulgação científica",
+                                                    xlabel=valor_selecionado,
                                                     figsize=(12, 10))
             
             buf = BytesIO()
@@ -118,10 +121,13 @@ with tabs[2]:
             var1 = [key for key, value in varmap.items() if value == tema_selecionado][0]
             ordered_categories = ["Muito importante", "Importante", "Um pouco importante", "Nada importante", "Não sei"][::-1]
             df[var1] = pd.Categorical(df[var1], categories=ordered_categories, ordered=True)
+            df[key] = pd.Categorical(df[key], categories=categories[key], ordered=True)
             # Gráfico de mosaico
             fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
-                                                    var1=var1, 
-                                                    var2=key,
+                                                    var2=var1, 
+                                                    var1=key,
+                                                    ylabel=tema_selecionado,
+                                                    xlabel=valor_selecionado,
                                                     figsize=(12, 10))
             
             buf = BytesIO()
@@ -135,5 +141,4 @@ with tabs[2]:
 
 
 
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+rodape()

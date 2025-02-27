@@ -4,6 +4,19 @@ import plotly.express as px
 from io import BytesIO
 from graphs import plot_mosaic_with_residuals
 from data_process import categories
+from PIL import Image
+
+def format_text(text, spaces_to_break=5):
+    parts = text.split(" ")
+    formatted_text = ""
+    count = 0
+    for part in parts:
+        count += 1
+        formatted_text += part + " "
+        if count % spaces_to_break == 0:
+            formatted_text += "\n"
+            count = 0
+    return formatted_text
 
 def plot_bar_chart_facets(df, varmap, prefix='odc1', ordered_categories=None, title='', height=800):
     if ordered_categories is None:
@@ -145,11 +158,15 @@ def render_dashboard(df, varmap, varset1, varset2, key="", pills1 = "", pills2 =
         # ordenar as categorias
         df[var1] = pd.Categorical(df[var1], categories=categories[var1], ordered=True)
         df[var2] = pd.Categorical(df[var2], categories=categories[var2], ordered=True)
+    
+    ylabel_formatted = format_text(tema_selecionado, spaces_to_break=10)
 
     # Gráfico de mosaico
     fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                             var1=var1, 
                                             var2=var2,
+                                            xlabel=valor_selecionado,
+                                            ylabel=ylabel_formatted,
                                             figsize=(12, 10))
     
     buf = BytesIO()
@@ -202,3 +219,22 @@ def explicacao_mosaico():
                     A barra de cores ao lado do gráfico mostra a escala de resíduos de Pearson.  Com o valor de _p_ do teste _chi-quadrado_ exibido logo abaixo\n
                     Valores de _p_ menores que 0.05 indicam que a associação entre as variáveis é estatisticamente significativa.  \n
             ''')
+
+
+def rodape():
+    st.markdown("---")
+    col1, col2 = st.columns([22, 10])
+
+    with col1:
+        st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+
+    with col2:
+        image1 = Image.open("img/incite.png")
+        image2 = Image.open("img/logotipo_INCT_CPCT.jpg")
+
+        # Ajustar a altura das imagens para serem iguais
+        height = 80  # Defina a altura desejada
+        image1 = image1.resize((int(image1.width * height / image1.height), height))
+        image2 = image2.resize((int(image2.width * height / image2.height), height))
+
+        col2.image([image1, image2], use_container_width='auto')

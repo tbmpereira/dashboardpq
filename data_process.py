@@ -16,6 +16,8 @@ with open("varmap.pkl", "rb") as f:
 with open("categories.pkl", "rb") as f:
     categories = pickle.load(f)
 
+categories["CE14"] = ['Até 5 anos', '6 a 10 anos', '11 a 20 anos', '21 a 35 anos', 'Acima de 35 anos']
+
 # Aplicar a transformação de categorias ordenadas a todas as colunas que começam com 'adc1'
 
 ordered_categories = ['Nenhuma vez', '1 vez', '2 vezes', '3 vezes', '4 vezes', '5 vezes', 'mais de 5 vezes']

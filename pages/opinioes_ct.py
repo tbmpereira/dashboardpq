@@ -4,7 +4,7 @@ from data_process import df, codigo_variaveis, varmap, categories
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
 import pandas as pd
-from estrutura import explicacao_mosaico
+from estrutura import explicacao_mosaico, rodape
 
 # Configuração inicial do Streamlit
 st.set_page_config(
@@ -232,6 +232,8 @@ with tabs[3]:
             fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
+                                                    xlabel=valor_selecionado,
+                                                    ylabel=resposta_selecionada,
                                                     figsize=(7, 5))
             
             buf = BytesIO()
@@ -294,6 +296,8 @@ with tabs[3]:
             fig_mosaic, num_rows = plot_mosaic_with_residuals(df, 
                                                     var1=var1, 
                                                     var2=key,
+                                                    xlabel=valor_selecionado,
+                                                    ylabel=resposta_selecionada,
                                                     figsize=(12, 10))
             
             buf = BytesIO()
@@ -304,5 +308,4 @@ with tabs[3]:
 
             explicacao_mosaico()
 
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+rodape()

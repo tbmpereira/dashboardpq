@@ -4,7 +4,7 @@ from data_process import varmap, codigo_variaveis, df, ordered_categories, order
 import plotly.express as px
 from graphs import plot_mosaic_with_residuals
 from io import BytesIO
-from estrutura import plot_bar_chart_facets, plot_bar_chart, explicacao_mosaico
+from estrutura import plot_bar_chart_facets, plot_bar_chart, explicacao_mosaico, rodape
 import pandas as pd
 
 # Configuração inicial do Streamlit
@@ -147,5 +147,4 @@ with tabs[2]:
     plot_bar_chart_facets(df, varmap, prefix="adc6", ordered_categories=ordered_categories_adc6, height=600)
     
 
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+rodape()

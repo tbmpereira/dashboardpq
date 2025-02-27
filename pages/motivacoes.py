@@ -1,5 +1,5 @@
 import streamlit as st
-from estrutura import plot_bar_chart_facets, plot_bar_chart_simplecounts, render_dashboard, explicacao_mosaico
+from estrutura import plot_bar_chart_facets, plot_bar_chart_simplecounts, render_dashboard, explicacao_mosaico, rodape
 from data_process import df, varmap, codigo_variaveis
 
 # Configuração inicial do Streamlit
@@ -61,5 +61,4 @@ with tabs[2]:
                      pills2="Formação")
     explicacao_mosaico()
 
-st.markdown("---")
-st.markdown("Dashboard desenvolvido por [Marcelo Pereira](https://marcelo-pereira.notion.site/)")
+rodape()
