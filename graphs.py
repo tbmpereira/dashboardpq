@@ -142,7 +142,7 @@ def plot_mosaic_with_residuals(df, var1, var2, figsize=(14, 12), title=None, xla
     if title:
         ax.set_title(title, fontsize=16)
 
-    # Ajustar o layout para evitar sobreposição
-    plt.tight_layout()
+    # # Ajustar o layout para evitar sobreposição
+    # plt.tight_layout()
 
     return fig, num_rows
